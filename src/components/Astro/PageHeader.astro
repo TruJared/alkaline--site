@@ -32,7 +32,7 @@
  *   description="Our latest work"
  *   image={portfolioImage}
  *   imageAlt="Project showcase"
- *   animateImage={true}
+ *   animate={true}
  *   backgroundPattern="dots"
  *   patternOpacity={0.2}
  *   class="my-custom-header"
@@ -62,7 +62,7 @@ export interface Props {
 	/** Alt text for the image */
 	imageAlt?: string;
 	/** Controls image animation (default: true) */
-	animateImage?: boolean;
+	animate?: boolean;
 	/** Pattern name for background decoration */
 	backgroundPattern?: string;
 	/** Opacity value for background pattern (0-1) */
@@ -76,7 +76,7 @@ const {
 	description,
 	image,
 	imageAlt,
-	animateImage = true,
+	animate = true,
 	backgroundPattern,
 	patternOpacity,
 	class: className,
@@ -85,7 +85,7 @@ const {
 
 <div
 	class:list={[
-		"relative flex flex-col items-center justify-between w-full px-4 pt-14 pb-4 -mt-12 md:flex-row md:pt-24 md:pb-24",
+		"relative flex flex-col items-center justify-between w-full px-4 pt-14 pb-4 -mt-12 lg:flex-row lg:pt-24 lg:pb-24",
 		className,
 	]}
 >
@@ -94,28 +94,35 @@ const {
 			<PatternBackground
 				pattern={backgroundPattern}
 				patternOpacity={patternOpacity}
+				animate={animate}
 			/>
 		)
 	}
-	<div class="flex flex-col items-start justify-center md:w-1/2 mb-8 md:mb-0">
+	<div class="flex flex-col items-start justify-center lg:w-1/2 mb-8 lg:mb-0">
 		<h2
-			class="font-display text-5xl font-medium tracking-tight text-neutral-950 [text-wrap:balance] sm:text-7xl build-in"
+			class:list={[
+				"font-display text-5xl font-medium tracking-tight text-neutral-950 [text-wrap:balance] sm:text-7xl",
+				{ "build-in": animate },
+			]}
 		>
 			{heading}
 		</h2>
-		<p class="mt-4 text-xl text-theme-primary build-in">{description}</p>
+		<p class:list={[
+			"mt-4 text-xl text-theme-primary",
+			{ "build-in": animate },
+		]}>{description}</p>
 	</div>
 
 	{
 		image && (
-			<div class="md:w-1/2 md:pl-8">
+			<div class="my-10 lg:w-5/12 lg:my-0 lg:pl-8">
 				<div class="relative overflow-hidden rounded-full aspect-square">
 					<Image
 						src={image}
 						alt={imageAlt ?? "Image"}
 						class:list={[
 							"w-full h-full object-cover",
-							{ "spin-and-grow": animateImage },
+							{ "spin-and-grow": animate },
 							{ "rounded-theme": true },
 						]}
 						width={500}

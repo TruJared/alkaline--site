@@ -46,7 +46,7 @@
 
 
 
-// Add common pattern presets
+// common pattern presets
 const PATTERN_PRESETS = {
 	dots: "M2 2h2v2H2z",
 	diagonal: "M0 0l5 5l-5 5l5-5z",
@@ -100,7 +100,7 @@ const patternId = `pattern-${crypto.randomUUID()}`;
 			"absolute inset-0 h-full w-full",
 			{ "spinOnAxis": animate }
 		]}
-		style={`mask-image: radial-gradient(circle at 65% 45%, hsla(0,0%,0%,${patternOpacity}) 0%, transparent 50%);`}
+		style={`mask-image: radial-gradient(circle at 56% 8%, hsla(0,0%,0%,${patternOpacity}) 0%, transparent 60%);`}
 		aria-hidden="true"
 	>
 		<defs>
@@ -112,7 +112,7 @@ const patternId = `pattern-${crypto.randomUUID()}`;
 				patternTransform="translate(-1 -1)"
 			>
 				<path
-					d={patternData}
+					d={patternData || PATTERN_PRESETS.circuit}
 					stroke="currentColor"
 					stroke-width={strokeWidth}
 					fill="none"

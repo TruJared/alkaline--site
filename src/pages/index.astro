@@ -4,36 +4,42 @@ import PageHeader from "@components/Astro/PageHeader.astro";
 import Card from "@components/Astro/Card.astro";
 
 import coverImage from "@assets/alk-cover-2.webp";
+
+const description = "Designed to be an all-in-one starter kit for your next project. Alkaline is designed to be easy to pick up, use, and customize. It's built with Astro, Tailwind,  TypeScript, and comes preloaded with a variety of components and utilities to help you get started. Thanks to the power of Astro, Alakline is a great soluiton for prototyping, blogs, portfolios, e-commerce, and more.";
 ---
 
 <Layout>
 	<PageHeader
 		heading="A Neutral Base For Your Next Creation."
-		description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos. loorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos."
+		description={description}
 		image={coverImage}
 		imageAlt="Sample image"
 		backgroundPattern="M20.3 29.35l-3.1-3.2-3.55 3.55-3.55-3.55 3.55-3.55 3.55 3.55L31.35 12 27.8 8.45l-3.55 3.55 3.55 3.55L30.9 18.65l-3.35 3.6L20.75 15.55l3.55-3.55L17.2 4.95 20.7 1.3l3.55 3.6L20.75 8.45 17.2 12l-7.45-7.45L13.35.9l3.85 4.05-3.55 3.55-3.55 3.55 3.55 3.55-3.55 3.55-3.55-3.55-3.9-3.9 3.55-3.55L13.65 15.55l-3.55-3.55L3.05 19.1l3.55 3.55L13.65 15.55l-3.55 3.55 3.55 3.55 3.55-3.55L23.75 25.8l.05.05-3.5 3.5"
 		patternOpacity={0.25}
+		animate={false}
 	/>
 	<section
-		class="flex flex-no-wrap flex-col gap-6 justify-center mx-0 md:flex-row lg:flex-wrap lg:justify-around opacity-0 transform scale-90 build-in mt-16"
+		class="flex flex-wrap flex-col justify-center gap-6 mx-0 md:flex-row md:justify-around lg:justify-evenly md:gap-12"
 	>
 		<Card
-			title="Feature."
-			description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos."
-			alt
+			title="Customizable"
+			description="Alkaline was built with customization in mind. The process to customize all parts of Alkaline is consistent throughout the entire project."
 			shadowSize="md"
 		/>
 		<Card
-			title="Feature."
-			description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos."
+			title="Configurable"
+			description="Almost all the site's settings are stored in a single config file, making it easy to customize and manage."
 			shadowSize="md"
 		/>
 		<Card
-			title="Feature."
-			description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos."
+			title="Lightweight"
+			description="Alkaline is fast and lightweight, with a small bundle size, and a small number of dependencies."
 			shadowSize="md"
-			alt
+		/>
+		<Card
+			title="Preloaded"
+			description="Alkaline comes preloaded with a variety of components and utilities to help you get started. Get started in minutes."
+			shadowSize="md"
 		/>
 	</section>
 </Layout>

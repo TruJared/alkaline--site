@@ -108,10 +108,10 @@ export const NAVIGATION: NavEntry[] = [
 		href: "/features/faq",
 		text: "FAQ",
 	},
-	{
-		href: "/404",
-		text: "404",
-	},
+	// {
+	// 	href: "/404",
+	// 	text: "404",
+	// },
 ];
 
 export const DOCS: Docs = {

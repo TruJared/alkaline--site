@@ -29,15 +29,15 @@
 	--color-background: #1a3c3c;
 	--color-gradient: #0a1e1e;
 	--color-text: #a3e7dd;
-	--color-accent: #50fa7b;
+	--color-accent: #14c4ac;
 	--color-accent-alt: #0a9b83;
 	--color-shadow: #005f5f;
 	/* options */
 	--border-radius: 0.2rem;
 }
 .theme-generic {
-	--color-background: #a09c9c;
-	--color-gradient: #d6eff8;
+	--color-background: #ffffff;
+	--color-gradient: #345a69;
 	--color-text: #040910;
 	--color-accent: #d74247;
 	--color-accent-alt: #264899;
@@ -59,7 +59,7 @@
 	--color-background: #1e2723;
 	--color-gradient: #2a3c2f;
 	--color-text: #e6dcc1;
-	--color-accent: #7d5a3c;
+	--color-accent: #c76815;
 	--color-accent-alt: #b8a86a;
 	--color-shadow: #162019;
 	/* options */
