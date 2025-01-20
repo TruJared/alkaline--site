@@ -1,5 +1,7 @@
 # Alkaline 🧪
 
+[Demo](https://alkaline-theme.xyz/)
+
 A neutral base for your next creation - Alkaline is a modern Astro theme focused on developer experience and clean design.
 
 ## What is Alkaline?

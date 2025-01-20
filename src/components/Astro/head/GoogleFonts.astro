@@ -36,25 +36,35 @@ export interface Props {
 const { fonts = [] } = Astro.props;
 
 function buildGoogleFontsUrl(fonts: Font[]) {
-
 	const baseUrl = "https://fonts.googleapis.com/css2?";
 
 	// Create a set to store all the unique query parameters
 	const queryParams = new Set<string>();
 
 	fonts?.forEach((font) => {
-
-		let fontQuery = `family=${font.fontFamily.replace(/ /g, '+')}`;
+		let fontQuery = `family=${font.fontFamily.replace(/ /g, "+")}`;
 
 		if (font.includeItalic) fontQuery += `:ital,wght@`;
 
-		if (font?.fontWeights && font?.fontWeights?.length > 0 && !font.includeItalic)
+		if (
+			font?.fontWeights &&
+			font?.fontWeights?.length > 0 &&
+			!font.includeItalic
+		)
 			fontQuery += `:wght@${font.fontWeights.join(";")}`;
 
 		// if ital we have to change the format of the fontWeights to match the google fonts api 0,300;0,400;1,300;1,400 etc
-		if (font?.fontWeights && font?.fontWeights?.length > 0 && font.includeItalic) {
-			const regularWeights = font.fontWeights.map((weight: any) => `0,${weight}`);
-			const italicWeights = font.fontWeights.map((weight: any) => `1,${weight}`);
+		if (
+			font?.fontWeights &&
+			font?.fontWeights?.length > 0 &&
+			font.includeItalic
+		) {
+			const regularWeights = font.fontWeights.map(
+				(weight: any) => `0,${weight}`
+			);
+			const italicWeights = font.fontWeights.map(
+				(weight: any) => `1,${weight}`
+			);
 			fontQuery += `${[...regularWeights, ...italicWeights].join(";")}`;
 		}
 
@@ -69,6 +79,14 @@ function buildGoogleFontsUrl(fonts: Font[]) {
 }
 ---
 
-<link rel="preconnect" href="https://fonts.googleapis.com" />
+<!-- <link rel="preconnect" href="https://fonts.googleapis.com" /> -->
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href={buildGoogleFontsUrl(fonts)} rel="stylesheet" />
+<link
+	rel="preload"
+	href={buildGoogleFontsUrl(fonts)}
+	onload="this.onload=null;this.rel='stylesheet';this.removeAttribute('as')"
+	as="style"
+/>
+<noscript>
+	<link rel="stylesheet" href={buildGoogleFontsUrl(fonts)} />
+</noscript>

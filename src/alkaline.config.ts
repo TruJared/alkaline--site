@@ -52,7 +52,7 @@ export const SITE: Site = {
 	description: "A Neutral Base For Your Next Creation",
 	keywords: ["astro", "theme", "blog"],
 	disableIndexing: false, // true for no indexing
-	logoSrc: "/alk4.png", // in public folder png or svg
+	logoSrc: "/alk4.webp", // in public folder
 	faviconSrc: "/favicon.png", // in public folder png or svg
 	ogImage: "/og-image.png", // in public folder
 	socials: socials,
