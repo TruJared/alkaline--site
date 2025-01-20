@@ -27,7 +27,7 @@ export const socials: Socials[] = [
 	},
 ];
 
-// use in development to easily see all author socials at once
+// use in development to easily see all author socials at once, comment out in production
 export const allSocials: Socials[] = Platforms.map((platform) => ({
 	platform,
 	url: `https://${platform}.com`,
@@ -47,7 +47,7 @@ export const AUTHORS: Author[] = [
 export const SITE: Site = {
 	title: "Alkaline",
 	showTitleBackground: true,
-	url: "https://fakesite.fake", // ! TODO: make sure to change this ! //
+	url: "https://fakesite.fake", // TODO: make sure to change this  //
 	author: AUTHORS[0].name, // Made with ❤️ by {your-name}
 	description: "A Neutral Base For Your Next Creation",
 	keywords: ["astro", "theme", "blog"],
@@ -59,7 +59,7 @@ export const SITE: Site = {
 	locale: "en_US",
 	postsPerPage: 3, // TODO: change this to a non-testing number
 	shikiConfig: {
-		theme: "poimandres",
+		theme: "material-theme-darker",
 	},
 	// * edit or remove ./Types/google-fonts.d.ts to add/remove font types * //
 	fonts: [

@@ -97,10 +97,10 @@ const patternId = `pattern-${crypto.randomUUID()}`;
 	<svg
 		xmlns="http://www.w3.org/2000/svg"
 		class:list={[
-			"absolute inset-0 h-full w-full",
+			"inset-0 h-full w-full absolute hidden lg:block",
 			{ "spinOnAxis": animate }
 		]}
-		style={`mask-image: radial-gradient(circle at 56% 8%, hsla(0,0%,0%,${patternOpacity}) 0%, transparent 60%);`}
+		style={`mask-image: radial-gradient(circle at 90% -37%, hsla(0,0%,0%,${patternOpacity}) 0%, transparent 60%);`}
 		aria-hidden="true"
 	>
 		<defs>

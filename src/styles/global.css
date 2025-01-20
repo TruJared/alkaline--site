@@ -19,7 +19,7 @@
 	}
 
 	section {
-		@apply p-3 m-3 md:p-4 md:m-4;
+		@apply p-3 m-3 mx-1 px-1  md:p-4 md:m-4;
 	}
 
 	article {
@@ -40,7 +40,7 @@
 	.h4,
 	.h5,
 	.h6 {
-		@apply tracking-widest font-bold font-serif;
+		@apply tracking-widest leading-relaxed font-bold font-serif;
 	}
 
 	h5,
@@ -52,12 +52,12 @@
 
 	h1,
 	.h1 {
-		@apply text-4xl text-theme-accent leading-relaxed md:text-5xl;
+		@apply text-4xl text-theme-accent md:text-5xl;
 	}
 
 	h2,
 	.h2 {
-		@apply text-4xl text-theme-accent leading-normal mb-1;
+		@apply text-4xl text-theme-accent mb-1;
 	}
 
 	h3,
@@ -100,11 +100,6 @@
 	h1,
 	.h1 {
 		@apply leading-tight;
-	}
-
-	h2,
-	.h2 {
-		@apply leading-snug;
 	}
 
 	pre:has(code) {
