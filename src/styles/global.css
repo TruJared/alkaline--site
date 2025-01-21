@@ -52,12 +52,12 @@
 
 	h1,
 	.h1 {
-		@apply text-4xl text-theme-accent md:text-5xl;
+		@apply text-[3.5rem] text-theme-accent md:text-[4rem] lg:tracking-widest lg:leading-normal;
 	}
 
 	h2,
 	.h2 {
-		@apply text-4xl text-theme-accent mb-1;
+		@apply text-5xl text-theme-accent mb-1;
 	}
 
 	h3,

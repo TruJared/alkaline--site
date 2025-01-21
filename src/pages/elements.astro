@@ -11,7 +11,7 @@ import Tooltip from "@components/Astro/Tooltip.astro";
 import { Icon } from "astro-icon/components";
 import Code from "@components/Astro/Code.astro";
 
-import alk4 from "@assets/alk4.webp";
+import alk4 from "@assets/alk4.png";
 
 const code = `
 ---
@@ -138,6 +138,21 @@ const {
 				>
 					<Card
 						title="Card"
+						description="Card with no shadow."
+						shadowSize="none"
+					/>
+					<Card
+						title="Card"
+						description="Card with medium shadow."
+						shadowSize="md"
+					/>
+					<Card
+						title="Card"
+						description="Card with large shadow."
+						shadowSize="lg"
+					/>
+					<Card
+						title="Card"
 						description="Alt Card with no shadow."
 						shadowSize="none"
 						alt
@@ -153,21 +168,6 @@ const {
 						description="Alt card with large shadow."
 						shadowSize="lg"
 						alt
-					/>
-					<Card
-						title="Card"
-						description="Card with no shadow."
-						shadowSize="none"
-					/>
-					<Card
-						title="Card"
-						description="Card with medium shadow."
-						shadowSize="md"
-					/>
-					<Card
-						title="Card"
-						description="Card with large shadow."
-						shadowSize="lg"
 					/>
 				</div>
 			</article>

@@ -57,7 +57,7 @@ export const SITE: Site = {
 	ogImage: "/og-image.png", // in public folder
 	socials: socials,
 	locale: "en_US",
-	postsPerPage: 3, // TODO: change this to a non-testing number
+	postsPerPage: 3, // TODO: change this to a non-testing number //
 	shikiConfig: {
 		theme: "material-theme-darker",
 	},
@@ -104,10 +104,10 @@ export const NAVIGATION: NavEntry[] = [
 		href: "/features/feature-list",
 		text: "Features",
 	},
-	{
-		href: "/features/faq",
-		text: "FAQ",
-	},
+	// {
+	// 	href: "/features/faq",
+	// 	text: "FAQ",
+	// },
 	// {
 	// 	href: "/404",
 	// 	text: "404",

@@ -20,8 +20,6 @@
  * - Accessible with proper ARIA labels
  */
 
-
-
 import ToggleTheme from "@components/Astro/ToggleTheme.astro";
 import type { NavEntry } from "../../Types/types";
 
@@ -38,15 +36,16 @@ const { links = [], class: className } = Astro.props;
 ---
 
 <nav
+	id="main-navigation"
 	aria-label="Main navigation"
-	class:list={["flex flex-nowrap z-10 mt-2 mb-8 px-4 2xl:px-0", className]}
+	class:list={["flex flex-nowrap z-10 mt-0.5 mb-8 px-4", className]}
 >
 	<ul class="inline-flex flex-wrap mb-2 sm:mb-0 sm:mr-6">
 		{
 			links.map((obj) => (
 				<li class="pr-2 first:pl-0">
 					<a href={obj.href} class="px-2 first:pl-0">
-							{obj.text}
+						{obj.text}
 					</a>
 				</li>
 			))
@@ -54,3 +53,12 @@ const { links = [], class: className } = Astro.props;
 	</ul>
 	<ToggleTheme class="ml-auto" />
 </nav>
+
+<style>
+	@media screen and (width >= 1570px) {
+		#main-navigation {
+			padding-left: 0;
+			padding-right: 0;
+		}
+	}
+</style>

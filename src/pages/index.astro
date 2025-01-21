@@ -5,7 +5,8 @@ import Card from "@components/Astro/Card.astro";
 
 import coverImage from "@assets/alk-cover-2.webp";
 
-const description = "Alkaline is the solution for blogs, portfolios, e-commerce, and more. Alkaline is easily configurable, and features 14 customizable color themes, a consistent design system, type hinting, MDX support, Tailwind, animations, over two dozen custom components, and more.";
+const description =
+	"Alkaline is your solution for blogs, portfolios, e-commerce sites, and more. Alkaline is easily configurable, features 14 customizable color themes, a consistent design system, type hinting, MDX, Tailwind, animations, view transitions, over two dozen custom components, and more!";
 ---
 
 <Layout>
@@ -16,10 +17,10 @@ const description = "Alkaline is the solution for blogs, portfolios, e-commerce,
 		imageAlt="Sample image"
 		backgroundPattern="M20.3 29.35l-3.1-3.2-3.55 3.55-3.55-3.55 3.55-3.55 3.55 3.55L31.35 12 27.8 8.45l-3.55 3.55 3.55 3.55L30.9 18.65l-3.35 3.6L20.75 15.55l3.55-3.55L17.2 4.95 20.7 1.3l3.55 3.6L20.75 8.45 17.2 12l-7.45-7.45L13.35.9l3.85 4.05-3.55 3.55-3.55 3.55 3.55 3.55-3.55 3.55-3.55-3.55-3.9-3.9 3.55-3.55L13.65 15.55l-3.55-3.55L3.05 19.1l3.55 3.55L13.65 15.55l-3.55 3.55 3.55 3.55 3.55-3.55L23.75 25.8l.05.05-3.5 3.5"
 		patternOpacity={0.25}
-		animate={false}
+		animate={true}
 	/>
 	<section
-		class="flex flex-wrap flex-col justify-center gap-6 mx-0 md:flex-row md:justify-around lg:justify-evenly md:gap-12"
+		class="flex flex-wrap flex-row justify-center gap-6 mx-0 md:mt-6 md:justify-evenly lg:gap-12 xl:mt-16 build-in"
 	>
 		<Card
 			title="Customizable"
@@ -33,19 +34,41 @@ const description = "Alkaline is the solution for blogs, portfolios, e-commerce,
 		/>
 		<Card
 			title="Lightweight"
-			description="Alkaline is fast and lightweight, with a small bundle size, and a small number of dependencies."
+			description="Alkaline is fast and lightweight, earning a perfect score on Lighthouse. It is built with performance in mind and is optimized for speed."
 			shadowSize="lg"
 		/>
 		<Card
 			title="Preloaded"
-			description="Alkaline comes preloaded with a variety of components and utilities to help you get started. Get started in minutes."
+			description="Alkaline comes preloaded with a variety of components and utilities to help you get started in minutes."
+			shadowSize="lg"
+		/>
+		<Card
+			title="No Framework"
+			description=" Walk your own path. Thanks to the power of Astro, Alkaline is built without a JavaScript framework."
+			shadowSize="lg"
+		/>
+		<Card
+			title="Open Source"
+			description="Alkaline is licensed under the MIT license. Feel free to use, modify, or even contribute to make it better."
 			shadowSize="lg"
 		/>
 	</section>
-</Layout>
 
-<style>
-	.build-in {
-		animation-delay: 0.75s;
-	}
-</style>
+	<section class="flex flex-col items-center justify-center mt-12">
+		<h2>Get Started</h2>
+		<p class="text-lg">
+			Ready to get started with Alkaline? Check out the documentation to learn
+			more about how to use and customize Alkaline.
+		</p>
+		<a href="/docs" class="btn btn-primary mt-6"> Documentation </a>
+	</section>
+
+	<section class="flex flex-col items-center justify-center mt-12">
+		<h2>Contribute</h2>
+		<p class="text-lg">
+			Alkaline is open source and contributions are welcome. If you have an idea
+			or a bug fix, feel free to contribute to the project.
+		</p>
+		<a href="" class="btn btn-primary mt-6"> Contribute </a>
+
+</Layout>
