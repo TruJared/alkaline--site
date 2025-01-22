@@ -21,6 +21,7 @@
  *   description="Our service details"
  *   iconSrc="icon-name"
  *   shadowSize="lg"
+ *   alignIcon="right"
  * />
  * ```
  *
@@ -44,8 +45,7 @@
  * - Customizable via props
  */
 
-
-import { Icon } from 'astro-icon/components';
+import { Icon } from "astro-icon/components";
 
 export interface Props {
 	/** Card title text */
@@ -54,8 +54,10 @@ export interface Props {
 	description: string;
 	/** Use alternate color scheme */
 	alt?: boolean;
-	/** Optional icon source name */
-	iconSrc?: string;
+	/** Optional icon source name i.e  ri:star */
+	name?: string;
+	/** Optional left/right icon alignment */
+	alignIcon?: "left" | "right" | null;
 	/** Shadow size variant */
 	shadowSize?: "sm" | "md" | "lg" | "none" | null;
 	/** Additional CSS classes */
@@ -66,7 +68,8 @@ const {
 	title,
 	description,
 	alt = false,
-	iconSrc = null,
+	name: iconName = null,
+	alignIcon = "left",
 	shadowSize = "sm",
 	class: className,
 } = Astro.props;
@@ -91,29 +94,31 @@ const options = {
 >
 	<p
 		class:list={[
-		"h3",
-			"center",
+			"h3",
 			"uppercase",
 			"font-bold",
 			"mb-2",
 			{ "text-theme-primary": !alt, "text-theme-secondary": alt },
 		]}
 	>
-
+		<span class="flex items-center gap-4">
 			{
-		iconSrc && (
-			<span class="flex logo-wrapper items-center p-4 bg-theme-accent">
-				<span class="flex items-center border-2 border-theme-secondary rounded-full">
-					<Icon name={iconSrc} size="16" class="absolute m-1" />
-			class="absolute m-1" />
-				</span>
+				iconName && alignIcon === 'left' && (
+					<Icon name={iconName} width={42} height={42}  />
+			<span class="md:flex-1 sm:border-b sm:border-theme-primary" />
+				)
+			}
+			{title}
+			{
+				iconName && alignIcon === 'right' && (
+					<span class="md:flex-1 sm:border-b sm:border-theme-primary" />
+					<Icon name={iconName} width={42} height={42}  />
+				)
+			}
 			</span>
-		)
-	}
 
-
-		{title}
-	</>
+		</span>
+	</p>
 	<hr
 		class:list={[
 			"border-1 mb-2",
@@ -121,7 +126,7 @@ const options = {
 			{ "border-theme-secondary": alt },
 		]}
 	/>
-	<p class:list={[{ "text-theme-primary": !alt, "text-theme-secondary": alt }]}>
+	<p class:list={["text-lg", { "text-theme-primary": !alt, "text-theme-secondary": alt }]}>
 		{description}
 	</p>
 </div>

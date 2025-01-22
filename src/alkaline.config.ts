@@ -28,11 +28,13 @@ export const socials: Socials[] = [
 ];
 
 // use in development to easily see all author socials at once, comment out in production
-export const allSocials: Socials[] = Platforms.map((platform) => ({
-	platform,
-	url: `https://${platform}.com`,
-	userName: `test_user_${platform}`,
-}));
+// export const allSocials: Socials[] = Platforms.map((platform) => ({
+// 	platform,
+// 	url: `https://${platform}.com`,
+// 	userName: `test_user_${platform}`,
+// }));
+
+export const allSocials: Socials[] = []
 
 export const AUTHORS: Author[] = [
 	// assumes that the 1st author has the same socials as the site - change if needed
@@ -45,21 +47,21 @@ export const AUTHORS: Author[] = [
 ];
 
 export const SITE: Site = {
-	title: "Alkaline",
+	title: "Alkaline Theme",
 	showTitleBackground: true,
-	url: "https://fakesite.fake", // TODO: make sure to change this  //
+	url: "https://alkaline-theme.xyz",
 	author: AUTHORS[0].name, // Made with ❤️ by {your-name}
 	description: "A Neutral Base For Your Next Creation",
 	keywords: ["astro", "theme", "blog"],
 	disableIndexing: false, // true for no indexing
-	logoSrc: "/alk4.webp", // in public folder
-	faviconSrc: "/favicon.png", // in public folder png or svg
+	logoSrc: "/alkLogo.webp", // in public folder
+	faviconSrc: "/favicon.svg", // in public folder png or svg
 	ogImage: "/og-image.png", // in public folder
 	socials: socials,
 	locale: "en_US",
 	postsPerPage: 3, // TODO: change this to a non-testing number //
 	shikiConfig: {
-		theme: "material-theme-darker",
+		theme: "night-owl",
 	},
 	// * edit or remove ./Types/google-fonts.d.ts to add/remove font types * //
 	fonts: [
@@ -88,6 +90,14 @@ export const NAVIGATION: NavEntry[] = [
 		href: "/",
 		text: "Home",
 	},
+		{
+		href: "/elements",
+		text: "Elements",
+	},
+	{
+		href: "/features/feature-list",
+		text: "Features",
+	},
 	{
 		href: "/docs",
 		text: "Docs",
@@ -96,14 +106,7 @@ export const NAVIGATION: NavEntry[] = [
 		href: "/tags",
 		text: "Tags",
 	},
-	{
-		href: "/elements",
-		text: "Elements",
-	},
-	{
-		href: "/features/feature-list",
-		text: "Features",
-	},
+
 	// {
 	// 	href: "/features/faq",
 	// 	text: "FAQ",

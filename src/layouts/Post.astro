@@ -47,8 +47,8 @@ const { Content } = await render(entry);
 				{entry.data.subtitle && <p class="h2">{entry.data.subtitle}</p>}
 
 			<Image
-				src={entry.data.image || placeholderImage}
-				alt={entry.data.alt || entry.data.title}
+				src={entry.data.image.src || placeholderImage}
+				alt={entry.data.image.alt || entry.data.title}
 				class:list={["w-full h-auto max-h-50vh object-cover my-4", options]}
 				width={1200}
 				height={630}

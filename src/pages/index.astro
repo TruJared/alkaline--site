@@ -1,4 +1,6 @@
 ---
+// TODO: use Link component
+
 import Layout from "@layouts/Layout.astro";
 import PageHeader from "@components/Astro/PageHeader.astro";
 import Card from "@components/Astro/Card.astro";
@@ -20,55 +22,84 @@ const description =
 		animate={true}
 	/>
 	<section
-		class="flex flex-wrap flex-row justify-center gap-6 mx-0 md:mt-6 md:justify-evenly lg:gap-12 xl:mt-16 build-in"
+		class="flex flex-wrap flex-row justify-center gap-12 mx-0 mt-32 lg:mt-6 md:justify-evenly build-in"
 	>
 		<Card
-			title="Customizable"
+			title="Customize"
 			description="Alkaline was built with customization in mind. The process to customize all parts of Alkaline is consistent throughout the entire project."
 			shadowSize="lg"
+			name="ri:cake-3-line"
 		/>
 		<Card
-			title="Configurable"
+			title="Configure"
 			description="Almost all the site's settings are stored in a single config file, making it easy to customize and manage."
 			shadowSize="lg"
+			name="ri:settings-3-line"
 		/>
 		<Card
-			title="Lightweight"
-			description="Alkaline is fast and lightweight, earning a perfect score on Lighthouse. It is built with performance in mind and is optimized for speed."
-			shadowSize="lg"
-		/>
-		<Card
-			title="Preloaded"
+			title="Connect"
 			description="Alkaline comes preloaded with a variety of components and utilities to help you get started in minutes."
 			shadowSize="lg"
-		/>
-		<Card
-			title="No Framework"
-			description=" Walk your own path. Thanks to the power of Astro, Alkaline is built without a JavaScript framework."
-			shadowSize="lg"
-		/>
-		<Card
-			title="Open Source"
-			description="Alkaline is licensed under the MIT license. Feel free to use, modify, or even contribute to make it better."
-			shadowSize="lg"
+			name="ri:puzzle-2-line"
 		/>
 	</section>
 
-	<section class="flex flex-col items-center justify-center mt-12">
+	<section class="flex flex-col items-center justify-center mb-64 mt-32">
 		<h2>Get Started</h2>
-		<p class="text-lg">
+		<p class="text-lg max-w-7xl">
 			Ready to get started with Alkaline? Check out the documentation to learn
 			more about how to use and customize Alkaline.
 		</p>
 		<a href="/docs" class="btn btn-primary mt-6"> Documentation </a>
 	</section>
 
-	<section class="flex flex-col items-center justify-center mt-12">
+	<section
+		class="flex flex-wrap flex-row justify-center gap-12 mx-0 md:mt-6 md:justify-evenly build-in"
+	>
+		<Card
+			title="Fast"
+			description="Alkaline is fast and lightweight, earning a perfect score on Lighthouse. It is built with performance in mind and is optimized for speed."
+			shadowSize="lg"
+			name="ri:rocket-2-line"
+		/>
+		<Card
+			title="Flexible"
+			description=" Walk your own path. Thanks to the power of Astro, Alkaline is built without a JavaScript framework."
+			shadowSize="lg"
+			name="ri:code-s-slash-line"
+		/>
+		<Card
+			title="Free"
+			description="Alkaline is licensed under the MIT license. Feel free to use, modify, or even contribute to make it better."
+			shadowSize="lg"
+			name="ri:open-source-line"
+		/>
+	</section>
+
+	<section class="flex flex-col items-center justify-center mb-64 mt-32">
 		<h2>Contribute</h2>
-		<p class="text-lg">
+		<p class="text-lg max-w-7xl">
 			Alkaline is open source and contributions are welcome. If you have an idea
 			or a bug fix, feel free to contribute to the project.
 		</p>
 		<a href="" class="btn btn-primary mt-6"> Contribute </a>
+	</section>
 
+	<section class="flex flex-col items-center justify-center mb-64 mt-32">
+		<h2>About</h2>
+		<p class="text-lg max-w-7xl">
+			Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores porro
+			quo dignissimos nam! Mollitia rem dolorem quibusdam, voluptates nesciunt
+			illo at provident eius. Fugiat veniam corporis sequi ut perspiciatis odit.
+		</p>
+		<a href="https://jaredmakes.com" class="btn btn-primary mt-6">
+			JaredMakes
+		</a>
+	</section>
 </Layout>
+
+<style>
+	.build-in {
+		animation-delay: 0.75s;
+	}
+</style>

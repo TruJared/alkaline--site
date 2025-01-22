@@ -93,6 +93,7 @@ export type GoogleFontFamily =
 	| "Fjalla One"
 	| "Forum"
 	| "Frank Ruhl Libre"
+	| "Geist"
 	| "Gloria Hallelujah"
 	| "Glegoo"
 	| "Gochi Hand"

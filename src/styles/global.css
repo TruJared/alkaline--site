@@ -19,7 +19,7 @@
 	}
 
 	section {
-		@apply p-3 m-3 mx-1 px-1  md:p-4 md:m-4;
+		@apply py-3 px-6 m-3 mx-1 md:p-4 md:m-4;
 	}
 
 	article {

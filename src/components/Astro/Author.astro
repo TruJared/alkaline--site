@@ -13,17 +13,17 @@ export interface Props {
 const { authorId, pubDateTime = null, class: className } = Astro.props;
 ---
 
-<span class:list={["text-theme-primary font-mono", className]}>
-	<div >
-		By {AUTHORS.find((author) => author.id === authorId)?.name}
-
+<span class:list={["text-theme-primary font-mono text-base", className]}>
+		{AUTHORS.find((author) => author.id === authorId)?.name}
 		<span class="text-xs">
 			{pubDateTime ? `on ${pubDateTime.toDateString()}  ` : ""}
 		</span>
-	</div>
-
+		<div></div>
 	<SocialsCloud
 		socials={AUTHORS.find((author) => author.id === authorId)?.socials || []}
 		size={18}
+		class:list={[className]}
 	/>
 </span>
+
+</>

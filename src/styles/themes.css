@@ -144,4 +144,5 @@
 	--color-accent-alt: #8b390d;
 	--color-shadow: #331818;
 	/* options */
+	--border-radius: 0.4rem;
 }
