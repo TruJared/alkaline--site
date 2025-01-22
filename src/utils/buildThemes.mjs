@@ -55,6 +55,7 @@ export const themeNames = [${themeNames.map(name => `'${name}'`).join(', ')}];
     // Update types file
     let existingTypes = await readFile(outputTypeFile, 'utf-8');
     const themeNamesTypeRegex = /\/\/ This type is auto-generated[\s\S]*?export type ThemeNames[^;]*;/;
+
     if (themeNamesTypeRegex.test(existingTypes)) {
       const newContent = existingTypes.replace(themeNamesTypeRegex, typeContent.trim());
       if (newContent !== existingTypes) {
@@ -88,7 +89,7 @@ async function main() {
 
   console.log(chalk.greenBright('Theme names extraction and file generation completed successfully! 🎉'));
   console.log('');
-  console.log(chalk.magentaBright('Astro preparing for lift off! 🚀'));
+  console.log(chalk.magentaBright('Astro preparing for lift off! 🧑‍🚀'));
   console.log('');
   console.log(chalk.bgYellow(' ~~ Note that the initial build times can take a bit longer than usual ~~ '));
   console.log('');
