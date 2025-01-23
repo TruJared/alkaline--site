@@ -1,6 +1,4 @@
 ---
-// TODO: use Link component
-
 import Layout from "@layouts/Layout.astro";
 import PageHeader from "@components/Astro/PageHeader.astro";
 import Card from "@components/Astro/Card.astro";
@@ -8,15 +6,15 @@ import Card from "@components/Astro/Card.astro";
 import coverImage from "@assets/alk-cover-2.webp";
 
 const description =
-	"Alkaline is your solution for blogs, portfolios, e-commerce sites, and more. Alkaline is easily configurable, features 14 customizable color themes, a consistent design system, type hinting, MDX, Tailwind, animations, view transitions, over two dozen custom components, and more!";
+	"Build modern websites in minutes with Alkaline - a zero-dependency, type-safe Astro toolkit. Features 14 stunning themes, pre-built components, and a powerful design system. Perfect for blogs, portfolios, and e-commerce sites.";
 ---
 
 <Layout>
 	<PageHeader
-		heading="A Neutral Base For Your Next Creation."
+		heading="Transform Your Web Projects with Alkaline"
 		description={description}
 		image={coverImage}
-		imageAlt="Sample image"
+		imageAlt="Alkaline theme preview showcasing clean and modern design"
 		backgroundPattern="M20.3 29.35l-3.1-3.2-3.55 3.55-3.55-3.55 3.55-3.55 3.55 3.55L31.35 12 27.8 8.45l-3.55 3.55 3.55 3.55L30.9 18.65l-3.35 3.6L20.75 15.55l3.55-3.55L17.2 4.95 20.7 1.3l3.55 3.6L20.75 8.45 17.2 12l-7.45-7.45L13.35.9l3.85 4.05-3.55 3.55-3.55 3.55 3.55 3.55-3.55 3.55-3.55-3.55-3.9-3.9 3.55-3.55L13.65 15.55l-3.55-3.55L3.05 19.1l3.55 3.55L13.65 15.55l-3.55 3.55 3.55 3.55 3.55-3.55L23.75 25.8l.05.05-3.5 3.5"
 		patternOpacity={0.25}
 		animate={true}
@@ -25,32 +23,32 @@ const description =
 		class="flex flex-wrap flex-row justify-center gap-12 mx-0 mt-32 lg:mt-6 md:justify-evenly build-in"
 	>
 		<Card
-			title="Customize"
-			description="Alkaline was built with customization in mind. The process to customize all parts of Alkaline is consistent throughout the entire project."
-			shadowSize="lg"
-			name="ri:cake-3-line"
-		/>
-		<Card
 			title="Configure"
-			description="Almost all the site's settings are stored in a single config file, making it easy to customize and manage."
+			description="Single config file, TypeScript support, and pre-built components for rapid development."
 			shadowSize="lg"
 			name="ri:settings-3-line"
 		/>
 		<Card
 			title="Connect"
-			description="Alkaline comes preloaded with a variety of components and utilities to help you get started in minutes."
+			description="Built on pure Astro - add frameworks only when you need them. Ship less JavaScript by default."
 			shadowSize="lg"
 			name="ri:puzzle-2-line"
+		/>
+		<Card
+			title="Customize"
+			description="14 professionally crafted themes with consistent design patterns and extensive customization options."
+			shadowSize="lg"
+			name="ri:cake-3-line"
 		/>
 	</section>
 
 	<section class="flex flex-col items-center justify-center mb-64 mt-32">
-		<h2>Get Started</h2>
+		<h2>Start Building Today</h2>
 		<p class="text-lg max-w-7xl">
-			Ready to get started with Alkaline? Check out the documentation to learn
-			more about how to use and customize Alkaline.
+			Launch your next project in minutes with our comprehensive documentation
+			and ready-to-use components.
 		</p>
-		<a href="/docs" class="btn btn-primary mt-6"> Documentation </a>
+		<a href="/docs" class="btn btn-primary mt-6">View Documentation</a>
 	</section>
 
 	<section
@@ -58,43 +56,46 @@ const description =
 	>
 		<Card
 			title="Fast"
-			description="Alkaline is fast and lightweight, earning a perfect score on Lighthouse. It is built with performance in mind and is optimized for speed."
+			description="Experience blazing speed with Alkaline, optimized for performance and capable of achieving perfect scores on Lighthouse."
 			shadowSize="lg"
 			name="ri:rocket-2-line"
 		/>
 		<Card
 			title="Flexible"
-			description=" Walk your own path. Thanks to the power of Astro, Alkaline is built without a JavaScript framework."
+			description="Leverage Astro's capabilities to build without needing a JavaScript framework. Optionally, add one or multiple frameworks if desired."
 			shadowSize="lg"
 			name="ri:code-s-slash-line"
 		/>
 		<Card
 			title="Free"
-			description="Alkaline is licensed under the MIT license. Feel free to use, modify, or even contribute to make it better."
+			description="Alkaline is open-source and MIT licensed. Use, modify, and contribute to enhance its capabilities."
 			shadowSize="lg"
 			name="ri:open-source-line"
 		/>
 	</section>
 
 	<section class="flex flex-col items-center justify-center mb-64 mt-32">
-		<h2>Contribute</h2>
+		<h2>Open Source Community</h2>
 		<p class="text-lg max-w-7xl">
-			Alkaline is open source and contributions are welcome. If you have an idea
-			or a bug fix, feel free to contribute to the project.
+			Join our growing community of developers. Share ideas, contribute code,
+			and help shape the future of web development.
 		</p>
-		<a href="" class="btn btn-primary mt-6"> Contribute </a>
+		<a
+			href="https://github.com/jaredmakes/alkaline"
+			class="btn btn-primary mt-6">Join on GitHub</a
+		>
 	</section>
 
 	<section class="flex flex-col items-center justify-center mb-64 mt-32">
-		<h2>About</h2>
+		<h2>Created by Developers, for Developers</h2>
 		<p class="text-lg max-w-7xl">
-			Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores porro
-			quo dignissimos nam! Mollitia rem dolorem quibusdam, voluptates nesciunt
-			illo at provident eius. Fugiat veniam corporis sequi ut perspiciatis odit.
+			Alkaline is crafted by JaredMakes with a focus on developer experience,
+			performance, and clean code. Built to solve real-world web development
+			challenges.
 		</p>
-		<a href="https://jaredmakes.com" class="btn btn-primary mt-6">
-			JaredMakes
-		</a>
+		<a href="https://jaredmakes.com" class="btn btn-primary mt-6"
+			>About the Creator</a
+		>
 	</section>
 </Layout>
 

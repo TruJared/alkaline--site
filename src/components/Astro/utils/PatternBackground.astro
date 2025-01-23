@@ -1,51 +1,4 @@
 ---
-/**
- * @description Component for creating decorative SVG pattern backgrounds with customizable opacity and presets.
- * @param {Props} props - PatternBackground configuration
- * @example
- * ```astro
- * // Using a preset pattern
- * <PatternBackground
- *   pattern="dots"
- *   patternOpacity={0.15}
- * />
- *
- * // Using a preset with custom sizing
- * <PatternBackground
- *   pattern="grid"
- *   patternSize={40}
- *   strokeWidth={2}
- * />
- *
- * // Using a custom pattern
- * <PatternBackground
- *   pattern="M0 0h10v10H0z"
- *   patternOpacity={0.2}
- *   animate={false}
- * />
- *
- * // Full customization
- * <PatternBackground
- *   pattern="waves"
- *   patternSize={50}
- *   strokeWidth={1.5}
- *   patternOpacity={0.1}
- *   animate={true}
- *   class="my-custom-pattern"
- * />
- * ```
- * @note
- * - Includes preset patterns: dots, diagonal, grid, waves, circuit
- * - Supports custom SVG path data
- * - Radial gradient mask for fade-out effect
- * - Configurable pattern size and stroke width
- * - Optional animation effects
- * - Uses currentColor for theme compatibility
- * - Optimized SVG rendering with non-scaling-stroke
- */
-
-
-
 // common pattern presets
 const PATTERN_PRESETS = {
 	dots: "M2 2h2v2H2z",
@@ -55,7 +8,7 @@ const PATTERN_PRESETS = {
 	circuit: "M5 0v10M0 5h10M15 0v10M10 5h10",
 } as const;
 
-export interface Props {
+interface Props {
 	/** SVG path data for the pattern or preset name */
 	pattern: string | keyof typeof PATTERN_PRESETS;
 	/** Opacity value for the pattern (0-1) */

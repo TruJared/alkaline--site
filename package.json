@@ -2,7 +2,7 @@
   "name": "alkaline--final",
   "type": "module",
   "version": "1.0.0",
-"scripts": {
+  "scripts": {
     "dev": "npm run build:themes && astro dev",
     "start": "npm run build:themes && astro dev",
     "build": "npm run astro check && astro build",

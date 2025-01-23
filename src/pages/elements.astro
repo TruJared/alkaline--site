@@ -11,8 +11,8 @@ import Tooltip from "@components/Astro/Tooltip.astro";
 import { Icon } from "astro-icon/components";
 import Code from "@components/Astro/Code.astro";
 
-import logoImg from "@assets/alk4.png";
 
+const logoImg = "/alk4.png";
 
 const code = `
 ---
@@ -27,7 +27,7 @@ import { SITE } from "@config";
 import { Code } from "astro:components";
 import CopyToClipboard from "./utils/CopyToClipboard.astro";
 
-export interface CopyCodeProps {
+interface CopyCodeProps {
 	code?: string;
 	lang: BundledLanguage | SpecialLanguage | LanguageRegistration;
 	customIcon?: JSX.Element;
