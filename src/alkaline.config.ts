@@ -61,7 +61,7 @@ export const SITE: Site = {
 	locale: "en_US",
 	postsPerPage: 3, // TODO: change this to a non-testing number //
 	shikiConfig: {
-		theme: "night-owl",
+		theme: "plastic",
 	},
 	// * edit or remove ./Types/google-fonts.d.ts to add/remove font types * //
 	fonts: [
