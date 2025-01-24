@@ -45,7 +45,7 @@ import { SITE } from "@config";
 
 import { Code as CodeComponent } from "astro:components";
 
-export interface Props {
+interface Props {
 	code: string;
 	lang: BundledLanguage | SpecialLanguage | LanguageRegistration;
 	wrap?: boolean;

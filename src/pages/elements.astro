@@ -27,7 +27,7 @@ import { SITE } from "@config";
 import { Code } from "astro:components";
 import CopyToClipboard from "./utils/CopyToClipboard.astro";
 
-export interface CopyCodeProps {
+interface CopyCodeProps {
 	code?: string;
 	lang: BundledLanguage | SpecialLanguage | LanguageRegistration;
 	customIcon?: JSX.Element;

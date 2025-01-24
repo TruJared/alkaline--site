@@ -12,7 +12,7 @@ import Author from "@components/Astro/Author.astro";
 
 import placeholderImage from "@assets/redbg.png";
 
-export interface Props {
+interface Props {
 	collectionName: (typeof COLLECTION_NAMES_LIST)[number];
 	postId: string | number;
 	tags: string[] | undefined | null;

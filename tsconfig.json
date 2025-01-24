@@ -10,30 +10,7 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "@config": [
-        "src/alkaline.config.ts"
-      ],
-      "@assets/*": [
-        "src/assets/*"
-      ],
-      "@components/*": [
-        "src/components/*"
-      ],
-      "@content/*": [
-        "src/data/*"
-      ],
-      "@layouts/*": [
-        "src/layouts/*"
-      ],
-      "@pages/*": [
-        "src/pages/*"
-      ],
-      "@styles/*": [
-        "src/styles/*"
-      ],
-      "@utils/*": [
-        "src/utils/*"
-      ],
+      "@/*": ["./src/*"]
     }
   }
 }

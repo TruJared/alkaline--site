@@ -78,8 +78,7 @@
 ===================================
  */
 	.donut--broken {
-		width: 1em;
-		height: 1em;
+
 		border-radius: 50%;
 		/* uncomment for loading spinner animation */
 		/* border: 0.25em solid gainsboro;
@@ -88,8 +87,7 @@
 	}
 
 	.donut {
-		width: 1em;
-		height: 1em;
+
 		border-radius: 50%;
 		animation: donut-spin 2s linear infinite;
 	}

@@ -35,19 +35,11 @@
  * />
  * ```
  *
- * @features
- * - Responsive design with mobile-first approach
- * - Optional icon with themed background
- * - Configurable shadow depths
- * - Alternate color schemes
- * - Theme-based styling
- * - Consistent typography
- * - Customizable via props
  */
 
 import { Icon } from "astro-icon/components";
 
-export interface Props {
+interface Props {
 	/** Card title text */
 	title: string;
 	/** Card description content */

@@ -11,7 +11,7 @@ import Tag from "@components/Astro/utils/Tag.astro";
 import PageHeading from "@components/Astro/PageHeading.astro";
 import Author from "@components/Astro/Author.astro";
 
-export interface Props {
+interface Props {
 	posts: any; // TODO: type
 	page?: any; // TODO: type
 	collectionName: (typeof COLLECTION_NAMES_LIST)[number] | string | undefined;
