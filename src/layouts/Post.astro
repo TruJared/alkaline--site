@@ -10,8 +10,6 @@ import Layout from "@layouts/Layout.astro";
 import Tags from "@components/Astro/Tags.astro";
 import Author from "@components/Astro/Author.astro";
 
-import placeholderImage from "@assets/redbg.png";
-
 interface Props {
 	collectionName: (typeof COLLECTION_NAMES_LIST)[number];
 	postId: string | number;
@@ -40,26 +38,29 @@ const { Content } = await render(entry);
 <Layout
 	title={entry.data.title}
 	description={entry.data.description}
-	logoSrc={""}
+
 >
 	<section>
 		<article class:list={["prose", className]}>
-				{entry.data.subtitle && <p class="h2">{entry.data.subtitle}</p>}
+			{entry.data.subtitle && <p class="h2">{entry.data.subtitle}</p>}
 
-			<Image
-				src={entry.data.image.src || placeholderImage}
-				alt={entry.data.image.alt || entry.data.title}
-				class:list={["w-full h-auto max-h-50vh object-cover my-4", options]}
-				width={1200}
-				height={630}
-			/>
-
+			{
+				entry.data.image && (
+					<Image
+						src={entry.data.image.src}
+						alt={entry.data.image.alt || entry.data.title}
+						class:list={["w-full h-auto max-h-50vh object-cover my-4", options]}
+						width={1200}
+						height={630}
+					/>
+				)
+			}
 
 			<Author
 				authorId={entry.data.authorId}
 				pubDateTime={entry.data.pubDatetime}
 			/>
-						{
+			{
 				entry.data.tags && (
 					<span class="flex items-baseline mt-6">
 						<Tags tags={entry.data.tags} />
@@ -67,9 +68,8 @@ const { Content } = await render(entry);
 				)
 			}
 
-			<div class="h-8">
-			</div>
-			 <Content />
+			<div class="h-8"></div>
+			<Content />
 		</article>
 	</section>
 </Layout>

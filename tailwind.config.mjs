@@ -10,13 +10,15 @@ export default {
 	theme: {
 		colors: {
 			slate: colors.slate,
+			stone: colors.stone,
+			zinc: colors.zinc,
 			white: colors.white,
 			black: colors.black,
 			transparent: 'transparent',
-			theme: {
-				primary: "var(--color-accent)",
-				secondary: "var(--color-accent-alt)",
-			},
+			// theme: {
+			// 	primary: "var(--color-accent)",
+			// 	secondary: "var(--color-accent-alt)",
+			// },
 		},
 		backgroundColor: {
 			slate: colors.slate,
@@ -38,13 +40,13 @@ export default {
 			}),
 			"gradient-radial": generateGradient({
 				type: "radial",
-				shape: "ellipse",
-				position: "center right",
+				position: "bottom",
 				colors: [
-					"var(--color-background)",
+					"var(--color-gradient)",
 					"var(--color-accent)",
-					"var(--color-text)",
+					"var(--color-accent-alt)",
 					"var(--color-shadow)",
+
 				],
 			}),
 		},
@@ -119,11 +121,6 @@ export default {
 		},
 	},
 	plugins: [require("@tailwindcss/typography")],
-	safelist: [
-		'bg-slate-400',
-		'text-white',
-		// Add other dynamic classes here
-	],
 };
 
 /**

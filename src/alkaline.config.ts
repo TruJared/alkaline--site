@@ -28,35 +28,38 @@ export const socials: Socials[] = [
 ];
 
 // use in development to easily see all author socials at once, comment out in production
-// export const allSocials: Socials[] = Platforms.map((platform) => ({
-// 	platform,
-// 	url: `https://${platform}.com`,
-// 	userName: `test_user_${platform}`,
-// }));
+export const allSocials: Socials[] = Platforms.map((platform) => ({
+	platform,
+	url: `https://${platform}.com`,
+	userName: `test_user_${platform}`,
+}));
 
-export const allSocials: Socials[] = []
 
 export const AUTHORS: Author[] = [
 	// assumes that the 1st author has the same socials as the site - change if needed
 	{
 		id: 1,
 		name: "Jared Truscott",
-		socials: [...socials, ...allSocials],
-		email: null,
+		socials: socials,
+		email: 'jared@jaredmakes.com'
 	},
-];
+	{
+		id: 2,
+		name: "Jeff Goldblum",
+		socials: allSocials,
+		email: null
+	},
+]
 
 export const SITE: Site = {
-	title: "Alkaline Theme",
+	title: "Alkaline",
 	showTitleBackground: true,
+	faviconSrc: "/favicon.png", // in public directory
 	url: "https://alkaline-theme.xyz",
 	author: AUTHORS[0].name, // Made with ❤️ by {your-name}
 	description: "A Neutral Base For Your Next Creation",
 	keywords: ["astro", "theme", "blog"],
-	disableIndexing: false, // true for no indexing
-	logoSrc: "/alkLogo.webp", // in public folder
-	faviconSrc: "/favicon.png", // in public folder png or svg
-	ogImage: "/og-image.png", // in public folder
+	disableIndexing: false, // true for no indexinger
 	socials: socials,
 	locale: "en_US",
 	postsPerPage: 3, // TODO: change this to a non-testing number //
@@ -82,7 +85,7 @@ export const SITE: Site = {
 			fontWeights: [400, 500, 700],
 		},
 	],
-	// Trouble with the fonts? It's likely because the font family name isn't EXACTLY correct or the font weights you're trying to fetch are not supported for that font family
+	// Trouble with the fonts? It's likely because a font family name isn't EXACTLY correct or the font weights you're trying to fetch are not supported for that font family
 };
 
 export const NAVIGATION: NavEntry[] = [
@@ -90,7 +93,7 @@ export const NAVIGATION: NavEntry[] = [
 		href: "/",
 		text: "Home",
 	},
-		{
+	{
 		href: "/elements",
 		text: "Elements",
 	},

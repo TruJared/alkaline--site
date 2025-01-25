@@ -38,38 +38,41 @@ const options = { "rounded-theme": true };
 
 <Layout title={title} description={description} class={className}>
 	{subtitle && <PageHeading text={subtitle} showHeadingBackground />}
-	<section>
+	<section class="md:max-w-3xl md:mx-auto">
+		{
+			!posts?.length && (
+				<p class="text-theme-primary">No posts found.</p>
+			)
+		}
 		{
 			posts?.map((post: any) => (
-				<article class="mb-12">
-					<div class="">
-						<a
-							href={`/${post.collection || collectionName}/${post.id}`}
-							class="no-underline flex flex-row items-center mb-2 group"
-						>
-							{post.data.image && (
-								<div class="w-20 h-20 mr-4 mb-2 flex-shrink-0 hidden md:block">
-									<Image
-										src={post.data.image.src}
-										alt={post.data.image.alt || post.data.title || "Post Image"}
-										format="webp"
-										width={128}
-										height={128}
-										class:list={[
-											"object-cover w-full h-full border border-theme-accent group-hover:rotate-6 transition-transform duration-500 m-0",
-											options,
-										]}
-										loading="lazy"
-									/>
-								</div>
-							)}
-							<h2 class="">{post.data.title}</h2>
-						</a>
-						<div class="flex flex-wrap -mt-2 mb-5">
-							{post.data.tags?.map((tag: string) => (
-								<Tag tag={tag} size="sm" />
-							))}
-						</div>
+				<article class="mb-12" id={post.id}>
+					<a
+						href={`/${post.collection || collectionName}/${post.id}`}
+						class="no-underline flex flex-row items-center mb-2 group"
+					>
+						{post.data.image && (
+							<div class="w-[4.5rem] h-[4.5rem] mr-4 mb-2 flex-shrink-0">
+								<Image
+									src={post.data.image.src}
+									alt={post.data.image.alt || post.data.title || "Post Image"}
+									format="webp"
+									width={128}
+									height={128}
+									class:list={[
+										"object-cover w-full h-full border border-theme-accent group-hover:rotate-6 transition-transform duration-500 m-0",
+										options,
+									]}
+									loading="lazy"
+								/>
+							</div>
+						)}
+						<h2 class="">{post.data.title}</h2>
+					</a>
+					<div class="flex flex-wrap -mt-2 mb-5">
+						{post.data.tags?.map((tag: string) => (
+							<Tag tag={tag} size="sm" />
+						))}
 					</div>
 					<p>
 						{post.data.description}{" "}

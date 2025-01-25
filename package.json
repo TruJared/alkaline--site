@@ -10,7 +10,7 @@
     "preview": "npm run build:themes && astro preview",
     "astro": "astro",
     "build:themes": "node ./src/utils/buildThemes.mjs",
-    "tech:support": "rm -rf .astro && rm -rf node_modules -v && npm i && npm run build:themes && astro dev"
+    "tech:support": "rm node_modules .astro .dist -rfv && npm i && npm run build:themes && astro dev"
   },
   "dependencies": {
     "@astrojs/check": "^0.9.4",

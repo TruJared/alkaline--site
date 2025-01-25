@@ -49,10 +49,15 @@ const {
 			/>
 		)
 	}
-	<div class="flex flex-col items-start justify-center lg:w-1/2 mb-8 lg:mb-0">
+	<div
+		class:list={[
+			"flex flex-col items-start justify-center lg:w-1/2 mb-8 lg:mb-0",
+			{ "lg:w-full lg:mb-12": !image },
+		]}
+	>
 		<h2
 			class:list={[
-				"font-display text-5xl font-medium tracking-tight text-neutral-950 [text-wrap:balance] sm:text-7xl",
+				"font-display text-5xl font-medium tracking-wide [text-wrap:balance] sm:text-7xl",
 				{ "build-in": animate },
 			]}
 		>
@@ -60,7 +65,7 @@ const {
 		</h2>
 		<p
 			class:list={[
-				"mt-4 text-2xl leading-relaxed text-theme-primary",
+				"mt-4 text-2xl leading-relaxed tracking-wide text-theme-primary",
 				{ "build-in": animate },
 			]}
 		>
@@ -68,12 +73,10 @@ const {
 		</p>
 	</div>
 
-	<div class="my-10 lg:w-5/12 lg:pl-8">
-		<div
-			class="relative overflow-hidden rounded-full aspect-square max-w-sm md:max-w-lg"
-		>
-			{
-				image && (
+	{
+		image && (
+			<div class="my-10 lg:w-5/12 lg:pl-8">
+				<div class="relative overflow-hidden rounded-full aspect-square max-w-sm md:max-w-lg">
 					<Image
 						src={image}
 						alt={imageAlt ?? "Image"}
@@ -86,10 +89,10 @@ const {
 						height={500}
 						loading="eager"
 					/>
-				)
-			}
-		</div>
-	</div>
+				</div>
+			</div>
+		)
+	}
 </div>
 
 <style>

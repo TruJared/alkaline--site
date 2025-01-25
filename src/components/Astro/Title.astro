@@ -20,7 +20,7 @@
  * <Title
  *   title="Company Blog"
  *   showTitleBackground={true}
- *   logoSrc={import("../../assets/logo.png")}
+ *   logo={import("../../assets/logo.png")}
  * />
  *
  * // With custom class
@@ -37,9 +37,9 @@
  * - Customizable through class prop
  */
 
+import type { ImageMetadata } from "astro";
 
-
-import { Image } from "astro:assets";
+// import { Image } from "astro:assets";
 
 interface Props {
 	/** Main title text */
@@ -47,43 +47,73 @@ interface Props {
 	/** Controls the title's visual style and background */
 	showTitleBackground: boolean;
 	/** Optional path to logo image */
-	logoSrc?: string;
+	logoImg?: ImageMetadata;
 	/** Optional CSS classes */
 	class?: string | undefined;
 }
 
-const { title, showTitleBackground, class: className, logoSrc } = Astro.props;
+const { title, showTitleBackground, class: className, logoImg } = Astro.props;
+
+const options = {
+	"rounded-theme": true,
+};
 ---
 
 <div
 	class:list={[
-		"flex border-b-4",
+		"flex border-b-[9px] border-t-[6px]",
 		{
+		"border-theme-primary": !showTitleBackground,
 			"border-theme-secondary": showTitleBackground,
-			"border-theme-accent": !showTitleBackground,
 		},
+		options,
+		// "rounded-t-none",
 	]}
 >
-	{
-		logoSrc && (
-			<span class="flex logo-wrapper items-center p-4 bg-theme-accent">
+	<!-- {
+		logoImg && (
+			<span
+				class:list={["flex logo-wrapper items-center px-1 bg-theme-accent-alt"]}
+			>
 				<span class="flex items-center border-2 border-theme-secondary rounded-full">
-					<Image src={logoSrc} alt="Logo" width={64} height={64} class="rounded-full" />
+					<Image
+						src={logoImg}
+						alt="Logo"
+						width={72}
+						height={72}
+						class="rounded-full"
+					/>
 				</span>
 			</span>
 		)
-	}
+	} -->
 	<h1
 		class:list={[
-			"py-2 m-0 w-full",
+			"py-2 w-full p-10 m-1",
 			{
-				"is-title-alt leading-none pl-4 py-5": showTitleBackground,
+				"is-title-alt leading-none py-5 text-center": showTitleBackground,
 				"is-title p-0 pl-2": !showTitleBackground,
-				"pl-4": logoSrc,
 			},
 			className,
 		]}
 	>
 		{title}
 	</h1>
+	<!-- {
+		logoImg && (
+			<span
+				class:list={["flex logo-wrapper items-center px-2 bg-theme-accent-alt"]}
+			>
+				<span class="flex items-center border-2 border-theme-secondary rounded-full">
+					<Image
+						src={logoImg}
+						alt="Logo"
+						width={72}
+						height={72}
+						class="rounded-full"
+					/>
+				</span>
+			</span>
+		)
+	} -->
 </div>

@@ -16,14 +16,14 @@ export type Font = {
 
 // these correspond to icon names for the remix icon library, they may need updated if you change the icon library
 export const Platforms =
-  ["behance", "bluesky", "codepen", "discord",
-  "dribbble", "email", "evernote", "facebook", "flickr", "github",
-  "gitlab", "global", "instagram", "line", "linkedin",
-  "mastodon", "medium", "messenger", "notion", "patreon", "pinterest",
-  "reddit", "rss", "skype", "slack", "snapchat",
-  "soundcloud", "spotify", "telegram", "threads", "tiktok",
-  "trello", "tumblr", "twitch", "twitter", "twitter-x", "vimeo",
-  "vk", "web", "wechat", "whatsapp", "youtube"] as const;
+	["behance", "bluesky", "codepen", "discord",
+		"dribbble", "email", "evernote", "facebook", "flickr", "github",
+		"gitlab", "global", "instagram", "line", "linkedin",
+		"mastodon", "medium", "messenger", "notion", "patreon", "pinterest",
+		"reddit", "rss", "skype", "slack", "snapchat",
+		"soundcloud", "spotify", "telegram", "threads", "tiktok",
+		"trello", "tumblr", "twitch", "twitter", "twitter-x", "vimeo",
+		"vk", "web", "wechat", "whatsapp", "youtube"] as const;
 
 export type Socials = {
 	platform: (typeof Platforms)[number] | string;
@@ -45,12 +45,11 @@ export type Site = {
 	postsPerPage: number;
 	keywords: string[];
 	disableIndexing: boolean;
-	logoSrc: string | null;
+	faviconSrc?: string;
 	shikiConfig: ShikiConfig;
 	description?: string | null;
 	ogImage?: string;
 	locale?: string;
-	faviconSrc?: string;
 	canonicalUrl?: string;
 	fonts: Font[];
 	showTitleBackground?: boolean;
@@ -73,4 +72,4 @@ export type Blog = {
 export type Docs = Blog;
 
 // This type is auto-generated. Do not edit manually.
-export type ThemeNames = 'theme-light' | 'theme-dark' | 'theme-deep-sea' | 'theme-hero' | 'theme-invisible' | 'theme-leet' | 'theme-neon-bliss' | 'theme-old-couch' | 'theme-peppermint' | 'theme-pop-punk' | 'theme-slime' | 'theme-spring' | 'theme-syntax' | 'theme-vanilla';
+export type ThemeNames = 'theme-light' | 'theme-dark' | 'theme-deep-sea' | 'theme-invisible' | 'theme-leet' | 'theme-mint-chocolate' | 'theme-neon-bliss' | 'theme-old-couch' | 'theme-peppermint' | 'theme-pop-punk' | 'theme-refresher' | 'theme-slime' | 'theme-syntax' | 'theme-vanilla';
