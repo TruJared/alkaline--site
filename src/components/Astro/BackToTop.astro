@@ -1,32 +1,47 @@
 ---
 
 ---
+
 <button
 	id="back-to-top-btn"
 	class="fixed bottom-0 right-0 w-0 h-0
       border-l-[75px] border-b-[75px]
       border-l-transparent border-b-theme-secondary
 			rounded-none
-      hover:border-theme-primary
+			shadow-lg
+      transition duration-500 ease-in-out
+			hover:shadow-theme-primary
 			hover:rounded-full
-			hover:mb-6
+      hover:border-theme-primary
+			hover:mb-7
 			hover:mr-2
-			hover:animate-pulse
-      transition duration-500
+			hover:-bottom-5
+			hover:scale-[1.15]
+			active:scale-90
+			active:shadow-sm
       group"
-	aria-label="Back to top"
+	aria-label="back to top"
 >
-	<svg
-		xmlns="http://www.w3.org/2000/svg"
-		class="h-6 w-6 absolute bottom-1 right-1 text-theme-accent group group-hover:animate-bounce group-hover:h-10 group-hover:w-10 group-hover:mr-3.5"
-		fill="currentColor"
-		viewBox="0 0 20 20"
+	<div
+		class="h-6 w-6 absolute bottom-1 right-1 group group-hover:h-10 group-hover:w-10 group-hover:mr-3.5"
 	>
-		<path
-			fill-rule="evenodd"
-			d="M14.707 12.707a1 1 0 01-1.414 0L10 9.414l-3.293 3.293a1 1 0 01-1.414-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 010 1.414z"
-			clip-rule="evenodd"></path>
-	</svg>
+		<svg
+			xmlns="http://www.w3.org/2000/svg"
+			fill="currentColor"
+			viewBox="0 0 20 20"
+			class="text-theme-accent group-hover:animate-bounce"
+		>
+			<path
+				fill-rule="evenodd"
+				d="M14.707 12.707a1 1 0 01-1.414 0L10 9.414l-3.293 3.293a1 1 0 01-1.414-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 010 1.414z"
+				clip-rule="evenodd"></path>
+		</svg>
+		<p
+			class="z-50 text-theme-secondary text-xs font-bold mt-1 pt-5 w-full h-full hidden group-hover:block"
+		>
+			Back To Top
+		</p>
+	</div>
 </button>
 
 <script is:inline>
