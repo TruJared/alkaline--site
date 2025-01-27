@@ -1,6 +1,6 @@
 ---
 import { Icon } from "astro-icon/components";
-import PageHeading from "@components/Astro/PageHeading.astro";
+import Heading from "@components/Astro/Heading.astro";
 import Layout from "@layouts/Layout.astro";
 import Link from "@components/Astro/Link.astro";
 import FeaturesList from "@components/Astro/FeaturesList.astro";
@@ -67,13 +67,14 @@ const features = [
 ];
 ---
 
-<Layout title="Elements">
+
+<Layout title="Features">
 	<div class="max-w-4xl mx-auto px-6">
-		<PageHeading text="Feature List" />
+		<Heading text="Feature List" />
 		<section>
 			<p class="flex items-center justify-center gap-2">
 				<Icon name="ri:questionnaire-line" size="1.5em" class="opacity-80" />
-				Looking for the <Link href="/features/faq" text="FAQ?" />
+				Looking for the <Link href="/faq" text="FAQ?" />
 			</p>
 			<article>
 				<FeaturesList features={features} />

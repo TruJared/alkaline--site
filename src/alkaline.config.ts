@@ -59,12 +59,12 @@ export const SITE: Site = {
 	author: AUTHORS[0].name, // Made with ❤️ by {your-name}
 	description: "A Neutral Base For Your Next Creation",
 	keywords: ["astro", "theme", "blog"],
-	disableIndexing: false, // true for no indexinger
+	disableIndexing: false, // true for no indexing
 	socials: socials,
 	locale: "en_US",
-	postsPerPage: 3, // TODO: change this to a non-testing number //
+	postsPerPage: 5, // TODO: change this to a non-testing number //
 	shikiConfig: {
-		theme: "plastic",
+		theme: "tokyo-night",
 	},
 	// * edit or remove ./Types/google-fonts.d.ts to add/remove font types * //
 	fonts: [
@@ -98,7 +98,7 @@ export const NAVIGATION: NavEntry[] = [
 		text: "Elements",
 	},
 	{
-		href: "/features/feature-list",
+		href: "/features",
 		text: "Features",
 	},
 	{
@@ -109,15 +109,14 @@ export const NAVIGATION: NavEntry[] = [
 		href: "/tags",
 		text: "Tags",
 	},
-
-	// {
-	// 	href: "/features/faq",
-	// 	text: "FAQ",
-	// },
-	// {
-	// 	href: "/404",
-	// 	text: "404",
-	// },
+	{
+		href: "/faq",
+		text: "FAQ",
+	},
+	{
+		href: "/404",
+		text: "404",
+	},
 ];
 
 export const DOCS: Docs = {

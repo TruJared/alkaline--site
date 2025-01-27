@@ -43,10 +43,11 @@ interface Props {
 		};
 	};
 	// Optional CSS classes //
-	class?: string |  undefined;
+	class?: string | undefined;
 }
 
 const { page, class: className } = Astro.props;
+if (!page) return;
 const { currentPage, lastPage, url } = page;
 const { next, prev } = url;
 ---

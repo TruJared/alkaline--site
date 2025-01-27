@@ -11,6 +11,7 @@
 	html {
 		@apply antialiased;
 		@apply min-h-[100svh] w-full flex flex-col items-center bg-theme-primary text-theme-primary bg-gradient-linear font-sans my-0 mx-auto;
+		@apply scroll-smooth;
 	}
 
 	body {
@@ -18,11 +19,27 @@
 	}
 
 	section {
-		@apply py-3 px-6 m-3 mx-1 md:p-4 md:m-4;
+		@apply my-16 mx-auto w-full p-2; /* 256px - 4rem top/bottom margin */
 	}
 
 	article {
-		@apply p-1 m-1 md:p-2 md:m-2;
+		@apply my-8 p-1; /* 128px - 2rem top/bottom margin */
+	}
+
+	div {
+		@apply my-4 p-1;
+		/* Flexible containers */
+	}
+
+	p {
+		@apply my-4 p-0.5;
+	}
+
+	span {
+		/* Inline elements */
+		margin: 0; /* No disruption to text flow */
+		padding: 0;
+		display: inline; /* Ensure inline behavior */
 	}
 
 	/** Typography **/
@@ -38,7 +55,7 @@
 	.h4,
 	.h5,
 	.h6 {
-		@apply tracking-widest leading-relaxed font-bold font-serif;
+		@apply tracking-widest leading-normal font-bold font-serif;
 	}
 
 	h5,
@@ -84,10 +101,12 @@
 		@apply text-theme-primary font-light py-1;
 	}
 
-	p {@apply mb-1}
+	p {
+		@apply mb-1;
+	}
 
 	a {
-		@apply underline underline-offset-2 decoration-2 decoration-theme-primary hover:decoration-theme-secondary hover:text-theme-accent hover:bg-opacity-20 cursor-pointer focus:ring-2 focus:p-1 focus:outline-none active:p-1;
+		@apply underline underline-offset-2 decoration-2 decoration-theme-primary hover:decoration-theme-secondary hover:text-theme-accent hover:bg-opacity-20 cursor-pointer focus:ring-2 focus:ring-theme-primary focus:ring-offset-2 focus:outline-none;
 	}
 
 	/* tweak line height */
@@ -129,7 +148,7 @@
 	/** scrollbar **/
 
 	html {
-		overflow-y: auto;
+		overflow-y: scroll;
 	}
 
 	/* width */
@@ -274,3 +293,14 @@
 		@apply pointer-events-none opacity-50 no-underline;
 	}
 }
+
+/* Utility classes for spacing adjustments */
+.no-margin {
+	margin: 0;
+}
+.no-padding {
+	padding: 0;
+}
+.stack > * + * {
+	margin-block-start: 1rem;
+} /* Stack items with consistent spacing */

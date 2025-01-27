@@ -86,11 +86,11 @@
 	--border-radius: 0.25rem;
 }
 .theme-peppermint {
-	--color-background: #ffffff;
-	--color-gradient: #f0f7f7;
+	--color-background: #F4F4F4;
+	--color-gradient:#fff3f3;
 	--color-text: #2a2a2a;
-	--color-accent: #ff0000;
-	--color-accent-alt: #7fbfbf;
+	--color-accent: #E4283F;
+	--color-accent-alt:#922838;
 	--color-shadow: hsla(0, 100%, 50%, 0.15);
 	/* options */
 	--border-radius: 0.8rem;
@@ -140,7 +140,7 @@
 	--color-gradient: #eee5c9;
 	--color-text: #1b1313;
 	--color-accent: #a32540;
-	--color-accent-alt: #8b390d;
+	--color-accent-alt: #a1887a;
 	--color-shadow: #331818;
 	/* options */
 	--border-radius: 0.4rem;

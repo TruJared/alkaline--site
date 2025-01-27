@@ -1,6 +1,15 @@
 import type { ShikiConfig } from "astro";
 import type { GoogleFontFamily } from "./google-fonts";
 
+/**
+ * Core Type Definitions
+ *
+ * Font Configuration:
+ * - Supports Google Fonts integration with type hints
+ * - Configurable font weights and italic variants
+ * - Categorizes fonts as sans, serif, or mono
+ */
+
 //  Accepts GoogleFontFamily for Google Fonts types(about 250 listed).
 //  Accept any other string if Google Fonts types doesn't import - comment out the import to remove the font hints
 type FontFamily =
@@ -73,3 +82,29 @@ export type Docs = Blog;
 
 // This type is auto-generated. Do not edit manually.
 export type ThemeNames = 'theme-light' | 'theme-dark' | 'theme-choco-mint' | 'theme-deep-sea' | 'theme-invisible' | 'theme-leet' | 'theme-neon-bliss' | 'theme-old-couch' | 'theme-peppermint' | 'theme-pop-punk' | 'theme-refresher' | 'theme-slime' | 'theme-syntax' | 'theme-vanilla';
+
+/**
+ * Site Configuration Types
+ *
+ * Author:
+ * - Defines content creators with social links and contact info
+ *
+ * Site:
+ * - Core website configuration including metadata, SEO, and theming
+ * - Handles fonts, favicon, analytics, and social media links
+ *
+ * Socials:
+ * - Supported social media platforms (matches Remix icon library)
+ * - Custom platform support with URL and username
+ *
+ * Navigation:
+ * - Simple href/text pairs for site navigation
+ *
+ * Content Types:
+ * - Blog: Configuration for blog sections
+ * - Docs: Mirror of blog structure for documentation
+ *
+ * Themes:
+ * - Auto-generated from CSS theme definitions
+ * - Managed by buildThemes.mjs script
+ */

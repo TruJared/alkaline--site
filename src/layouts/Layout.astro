@@ -14,7 +14,7 @@ import Title from "@components/Astro/Title.astro";
 import BackToTop from "@components/Astro/BackToTop.astro";
 import Footer from "@components/Astro/Footer.astro";
 
-import logo from "@assets/logo.webp";
+import logo from "@assets/alk4.png";
 
 interface Props {
 	title?: string;
@@ -81,7 +81,7 @@ const headerLogo = typeof logo === "undefined" ? null : logo; // guard against n
 		{/*<ResourceLinks />*/}
 	</head>
 	<body class:list={[options, className]}>
-		<div class="flex flex-col min-h-screen">
+		<div class="flex flex-col min-h-screen mt-0 pt-0">
 			{
 				headerLogo ? (
 					<Title

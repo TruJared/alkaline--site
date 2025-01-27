@@ -2,7 +2,7 @@
 import Layout from "@layouts/Layout.astro";
 import CodeCopy from "@components/Astro/CodeCopy.astro";
 import Link from "@components/Astro/Link.astro";
-import PageHeading from "@components/Astro/PageHeading.astro";
+import Heading from "@components/Astro/Heading.astro";
 import Title from "@components/Astro/Title.astro";
 import PageHeader from "@components/Astro/PageHeader.astro";
 import Card from "@components/Astro/Card.astro";
@@ -59,7 +59,7 @@ const {
 
 <Layout title="Elements">
 	<span class="elements-page">
-		<PageHeading text="Components" />
+		<Heading text="Components" />
 		<p class="mb-24 text-center mx-auto h3 leading-relaxed px-2">
 			Alkaline features more than 24 custom components, along with a concise
 			design and typography system.
@@ -73,11 +73,8 @@ const {
 				</h2>
 				<p>Various configurations are available for the title component.</p>
 				<div class="ml-4 lg:ml-12">
-					<Title
-						title="Gradient Title"
-						showTitleBackground={false}
-					/>
-					<div class="h-8"></div>
+					<Title title="Gradient Title" showTitleBackground={false} />
+					<div class="h-8 border-t-8 border-theme-secondary mb-4"></div>
 					<Title
 						title="With Background"
 						showTitleBackground
@@ -228,7 +225,7 @@ const {
 
 		<!-- Typography -->
 
-		<PageHeading text="Typography" />
+		<Heading text="Typography" />
 		<section>
 			<article class="mb-12">
 				<p class="text-center mx-auto h3 leading-relaxed px-2">
@@ -247,11 +244,18 @@ const {
 				</h2>
 				<div class="ml-4 lg:ml-12">
 					<p>
-			Lorem ipsum dolor sit amet, Conan O'Brien consectetur adipiscing elit. Sed ut urna nec purus lacinia tincidunt nec Andy Richter. Vivamus efficitur, risus at vehicula fermentum, eros magna Matt O'Brien, non tincidunt lacus magna at eros. Nulla facilisi. In hac habitasse platea dictumst."
+						Lorem ipsum dolor sit amet, Conan O'Brien consectetur adipiscing
+						elit. Sed ut urna nec purus lacinia tincidunt nec Andy Richter.
+						Vivamus efficitur, risus at vehicula fermentum, eros magna Matt
+						O'Brien, non tincidunt lacus magna at eros. Nulla facilisi. In hac
+						habitasse platea dictumst."
 					</p>
 					<p>
-	Lorem ipsum dolor sit amet, Conan O'Brien consectetur adipiscing elit. Sed ut urna nec purus lacinia tincidunt nec Andy Richter. Vivamus efficitur, risus at vehicula fermentum, eros magna Matt O'Brien, non tincidunt lacus magna at eros. Nulla facilisi. In hac habitasse platea dictumst."
-						nec.
+						Lorem ipsum dolor sit amet, Conan O'Brien consectetur adipiscing
+						elit. Sed ut urna nec purus lacinia tincidunt nec Andy Richter.
+						Vivamus efficitur, risus at vehicula fermentum, eros magna Matt
+						O'Brien, non tincidunt lacus magna at eros. Nulla facilisi. In hac
+						habitasse platea dictumst." nec.
 					</p>
 				</div>
 			</article>
@@ -293,7 +297,10 @@ const {
 				<div class="ml-4 lg:ml-12">
 					<blockquote class="border-l-4 border-gray-300 pl-4 italic">
 						<p>
-					Conan O'Brien consectetur adipiscing elit. Sed ut urna nec purus lacinia tincidunt nec Andy Richter. Vivamus efficitur, risus at vehicula fermentum, eros magna Matt O'Brien, non tincidunt lacus magna at eros. Nulla facilisi. In hac habitasse platea dictumst.
+							Conan O'Brien consectetur adipiscing elit. Sed ut urna nec purus
+							lacinia tincidunt nec Andy Richter. Vivamus efficitur, risus at
+							vehicula fermentum, eros magna Matt O'Brien, non tincidunt lacus
+							magna at eros. Nulla facilisi. In hac habitasse platea dictumst.
 						</p>
 					</blockquote>
 				</div>

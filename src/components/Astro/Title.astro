@@ -28,61 +28,57 @@ import type { ImageMetadata } from "astro";
 import { Image } from "astro:assets";
 
 interface Props {
-    // Main title text //
-    title: string;
-    // Controls the title's visual style and background //
-    showTitleBackground: boolean;
-    // Optional path to logo image //
-    logoImg?: ImageMetadata;
-    // Optional CSS classes //
-    class?: string | undefined;
+	// Main title text //
+	title: string;
+	// Controls the title's visual style and background //
+	showTitleBackground: boolean;
+	// Optional path to logo image //
+	logoImg?: ImageMetadata;
+	// Optional CSS classes //
+	class?: string | undefined;
 }
 
 const { title, showTitleBackground, class: className, logoImg } = Astro.props;
 
 const options = {
-    "rounded-theme": true,
+	"rounded-theme": true,
 };
 ---
 
 <div
-    class:list={[
-        "flex border-b-[9px] border-t-[6px]",
-        {
-            "border-theme-primary": !showTitleBackground,
-            "border-theme-secondary": showTitleBackground,
-        },
-        options,
-        "rounded-t-none",
-    ]}
+	class:list={[
+		"flex border-b-8 border-t-8 my-0 py-0",
+		{
+			"border-none": !showTitleBackground,
+			"border-theme-secondary": showTitleBackground,
+		},
+		options,
+		// "rounded-t-none",
+	]}
 >
-    {
-        logoImg && (
-            <span
-                class:list={["flex logo-wrapper items-center px-1 bg-theme-accent-alt"]}
-            >
-                <span class="flex items-center border-2 border-theme-secondary rounded-full">
-                    <Image
-                        src={logoImg}
-                        alt="Logo"
-                        width={72}
-                        height={72}
-                        class="rounded-full"
-                    />
-                </span>
-            </span>
-        )
-    }
-    <h1
-        class:list={[
-            "py-2 w-full p-10 m-1",
-            {
-                "is-title-alt leading-none py-5 text-center": showTitleBackground,
-                "is-title p-0 pl-2": !showTitleBackground,
-            },
-            className,
-        ]}
-    >
-        {title}
-    </h1>
+	<div class="flex flex-row items-center justify-center w-full my-0">
+		<h1
+			class:list={[
+				"w-full py-0 mx-0",
+				{
+					"is-title-alt leading-none py-5 text-center": showTitleBackground,
+					"is-title p-0": !showTitleBackground,
+				},
+				className,
+			]}
+		>
+			{!logoImg && title}
+
+			{
+				logoImg && (
+					<span class="flex items-center justify-center w-full">
+						<span class="rounded-full border-2 border-theme-primary mr-6 overflow-hidden hidden md:block">
+							<Image src={logoImg} alt="Logo" width={64} height={64} class="w-full" />
+						</span>
+						{title}
+					</span>
+				)
+			}
+		</h1>
+	</div>
 </div>

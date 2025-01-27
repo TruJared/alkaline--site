@@ -2,11 +2,45 @@
 import Layout from "@layouts/Layout.astro";
 import PageHeader from "@components/Astro/PageHeader.astro";
 import Card from "@components/Astro/Card.astro";
-
 import coverImage from "@assets/alk-cover-2.webp";
+import Link from "@components/Astro/Link.astro";
+
+import { Image } from "astro:assets";
+import Bing from "@assets/bing.jpg";
 
 const description =
-	"Build modern websites in minutes with Alkaline - a near-zero-dependency, framework-less, type-safe Astro starter kit. Featuring 14 unique color themes and more than 2 dozen pre-built Astro components, Alkaline is perfect for blogs, portfolios, e-commerce sites, and more.";
+	"Build modern websites in minutes with Alkaline - a low-dependency, framework-less, type-safe Astro starter kit. Featuring 14 unique color themes and more than 2 dozen pre-built Astro components, Alkaline is a great starting point for blogs, portfolios, e-commerce sites, and more.";
+
+const links = [
+	{
+		href: "/docs/start-here",
+		text: "Get Started",
+	},
+	{
+		href: "/docs/configuration",
+		text: "Configuration",
+	},
+	{
+		href: "/docs/components",
+		text: "Components",
+	},
+	{
+		href: "/docs/themes",
+		text: "Themes",
+	},
+	{
+		href: "/docs/design-system",
+		text: "Design System",
+	},
+	{
+		href: "/docs/about-alkaline",
+		text: "About Alkaline",
+	},
+];
+
+const options = {
+	"rounded-theme": true,
+};
 ---
 
 <Layout>
@@ -20,7 +54,7 @@ const description =
 		animate={true}
 	/>
 	<section
-		class="flex flex-wrap flex-row justify-center gap-12 mx-0 mt-32 lg:mt-6 build-in"
+		class="mx-0 w-full flex flex-row flex-wrap justify-center gap-4 mt-8 mb-16 md:gap-12 lg:justify-evenly  build-in"
 	>
 		<Card
 			title="Configure"
@@ -42,17 +76,29 @@ const description =
 		/>
 	</section>
 
-	<section class="flex flex-col items-center justify-center mb-64 mt-32">
-		<h2>Start Building Today</h2>
-		<p class="text-lg max-w-7xl">
-			Launch your next project in minutes with our comprehensive documentation
-			and ready-to-use components.
+	<section class="flex flex-col items-center justify-center mt-16 fade-in">
+		<h2
+			class:list={[
+				"bg-theme-secondary text-theme-secondary p-5  text-center uppercase w-full mb-8 lg:w-auto ",
+				options,
+			]}
+		>
+			Work Easy
+		</h2>
+		<p
+			class="text-2xl max-w-7xl leading-relaxed text-center md:max-w-screen-lg"
+		>
+			If your package.json looks like a phone book (remember those?) and your
+			build process requires a small server farm, you might be a web developer.
+			Alkaline brings back the simplicity without sacrificing the power, because
+			working hard is overrated.
 		</p>
-		<a href="/docs" class="btn btn-primary mt-6">View Documentation</a>
+		<Link href="/docs" class="btn btn-primary mt-6" text="View Documentation" />
 	</section>
 
 	<section
-		class="flex flex-wrap flex-row justify-center gap-12 mx-0 md:mt-6  build-in"
+		id="Features"
+		class="mx-0 w-full flex flex-row flex-wrap justify-center gap-4 mt-48mb-16 md:gap-12 lg:justify-evenly build-in"
 	>
 		<Card
 			title="Fast"
@@ -68,34 +114,70 @@ const description =
 		/>
 		<Card
 			title="Free"
-			description="Alkaline is open-source and MIT licensed. Use, modify, and contribute to enhance its capabilities."
+			description="What's mine is yours - Alkaline is open-source and MIT licensed."
 			shadowSize="lg"
 			name="ri:open-source-line"
 		/>
 	</section>
 
-	<section class="flex flex-col items-center justify-center mb-64 mt-32">
-		<h2>Open Source Community</h2>
-		<p class="text-lg max-w-7xl">
-			Join our growing community of developers. Share ideas, contribute code,
-			and help shape the future of web development.
-		</p>
-		<a
-			href="https://github.com/jaredmakes/alkaline"
-			class="btn btn-primary mt-6">Join on GitHub</a
+	<section
+		class="flex flex-col items-center justify-center mb-48 mt-16 fade-in"
+	>
+		<h2
+			class:list={[
+				"bg-theme-secondary text-theme-secondary p-5 text-center uppercase mb-8 lg:w-auto ",
+				options,
+			]}
 		>
+			Created For You
+		</h2>
+		<p
+			class="text-2xl max-w-7xl leading-relaxed text-center md:max-w-screen-lg"
+		>
+			Your tools should be accessible, not intimidating. Whether you're building
+			your first blog or your next startup, Alkaline gives you the foundation to
+			move fast and build things that last.
+		</p>
+
+		<Link
+			href="https://github.com/jaredmakes/alkaline"
+			class="btn btn-primary mt-6"
+			text="View on GitHub"
+		/>
 	</section>
 
-	<section class="flex flex-col items-center justify-center mb-64 mt-32">
-		<h2>Created by Developers, for Developers</h2>
-		<p class="text-lg max-w-7xl">
-			Alkaline is crafted by JaredMakes with a focus on developer experience,
-			performance, and clean code. Built to solve real-world web development
-			challenges.
-		</p>
-		<a href="https://jaredmakes.com" class="btn btn-primary mt-6"
-			>About the Creator</a
+	<section class="flex flex-col items-center justify-center mb-32 mt-12">
+		<Image
+			src={Bing}
+			alt="a quote from Chandler Bing from Friends. Hard work never killed anybody, but why take a chance?"
+			class:list={["shadow-md shadow-theme-primary", options]}
+			loading="lazy"
+			width={750}
+			height={500}
+			format="webp"
+		/>
+
+		<h2
+			class:list={[
+				"bg-theme-primary text-theme-primary p-5 text-center uppercase mt-12 lg:w-auto h3",
+				options,
+			]}
 		>
+			Get Started Today
+		</h2>
+		<div
+			class="flex flex-wrap gap-4 sm:gap-6 md:gap-8 lg:gap-10 mt-2 justify-center"
+		>
+			{
+				links.map((link) => (
+					<Link
+						href={link.href}
+						class="btn btn-primary mt-2"
+						text={link.text}
+					/>
+				))
+			}
+		</div>
 	</section>
 </Layout>
 
@@ -104,3 +186,5 @@ const description =
 		animation-delay: 0.75s;
 	}
 </style>
+
+<script></script>

@@ -8,7 +8,7 @@ import { Icon } from "astro-icon/components";
 import Pagination from "@components/Astro/Pagination.astro";
 import Layout from "@layouts/Layout.astro";
 import Tag from "@components/Astro/utils/Tag.astro";
-import PageHeading from "@components/Astro/PageHeading.astro";
+import Heading from "@components/Astro/Heading.astro";
 import Author from "@components/Astro/Author.astro";
 
 interface Props {
@@ -37,7 +37,7 @@ const options = { "rounded-theme": true };
 ---
 
 <Layout title={title} description={description} class={className}>
-	{subtitle && <PageHeading text={subtitle} showHeadingBackground />}
+	{subtitle && <Heading text={subtitle} showHeadingBackground />}
 	<section class="md:max-w-3xl md:mx-auto">
 		{
 			!posts?.length && (
@@ -51,11 +51,11 @@ const options = { "rounded-theme": true };
 						href={`/${post.collection || collectionName}/${post.id}`}
 						class="no-underline flex flex-row items-center mb-2 group"
 					>
-						{post.data.image && (
+						{post.data.cover && (
 							<div class="w-[4.5rem] h-[4.5rem] mr-4 mb-2 flex-shrink-0">
 								<Image
-									src={post.data.image.src}
-									alt={post.data.image.alt || post.data.title || "Post Image"}
+									src={post.data.cover.src}
+									alt={post.data.cover.alt || post.data.title || "Post Image"}
 									format="webp"
 									width={128}
 									height={128}
@@ -107,5 +107,7 @@ const options = { "rounded-theme": true };
 			))
 		}
 	</section>
-	{SITE.postsPerPage < page?.total && <Pagination page={page} />}
+	<div class="flex justify-center">
+		{SITE.postsPerPage < page?.total && <Pagination page={page} />}
+	</div>
 </Layout>
