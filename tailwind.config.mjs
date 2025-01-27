@@ -15,13 +15,15 @@ export default {
 			white: colors.white,
 			black: colors.black,
 			transparent: 'transparent',
-			// theme: {
-			// 	primary: "var(--color-accent)",
-			// 	secondary: "var(--color-accent-alt)",
-			// },
+			theme: {
+				primary: "var(--color-accent)",
+				secondary: "var(--color-accent-alt)",
+			},
 		},
 		backgroundColor: {
 			slate: colors.slate,
+			stone: colors.stone,
+			zinc: colors.zinc,
 			white: colors.white,
 			black: colors.black,
 			transparent: 'transparent',
@@ -51,7 +53,9 @@ export default {
 			}),
 		},
 		borderColor: {
-			...colors.slate,
+			slate: colors.slate,
+			stone: colors.stone,
+			zinc: colors.zinc,
 			white: colors.white,
 			black: colors.black,
 			transparent: 'transparent',
@@ -67,7 +71,9 @@ export default {
 			},
 		},
 		textColor: {
-			...colors.slate,
+			slate: colors.slate,
+			stone: colors.stone,
+			zinc: colors.zinc,
 			white: colors.white,
 			black: colors.black,
 			transparent: 'transparent',
