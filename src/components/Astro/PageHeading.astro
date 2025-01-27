@@ -1,40 +1,32 @@
 ---
-/**
- * @description Component for rendering consistent page headings with optional background styling.
- * @param {Props} props - PageHeading configuration
- * @example
- * ```astro
- * // Basic heading
- * <PageHeading text="Welcome" />
+/* Component for rendering consistent page headings with optional background.
  *
- * // Without background
+ * Props:
+ * - text: string - Heading text content
+ * - showHeadingBackground?: boolean - Enable background styling
+ * - class?: string - Additional CSS classes
+ *
+ * Example usage:
  * <PageHeading
- *   text="About Us"
- *   showHeadingBackground={false}
+ *   text="Our Services"
+ *   showHeadingBackground={true}
+ *   class="my-heading"
  * />
  *
- * // With custom styling
- * <PageHeading
- *   text="Contact"
- *   class="my-custom-heading"
- * />
- * ```
- * @note
+ * Notes:
  * - Centers text with responsive margins
- * - Optional background styling controlled by showHeadingBackground
+ * - Optional background styling
  * - Capitalizes text by default
- * - Uses theme-based colors and border radius
- * - Responsive padding and margins for different screen sizes
+ * - Theme-based colors
+ * - Responsive padding
  */
 
-
-
 interface Props {
-	/** Text content of the heading */
+	// Text content of the heading //
 	text: string;
-	/** Controls whether heading has background styling */
+	// Controls whether heading has background styling //
 	showHeadingBackground?: boolean;
-	/** Optional CSS classes */
+	// Optional CSS classes //
 	class?: string |  undefined;
 }
 

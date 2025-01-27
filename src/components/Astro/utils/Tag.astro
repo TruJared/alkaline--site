@@ -1,49 +1,36 @@
 ---
-/**
- * @description Component for rendering interactive tag elements with optional count indicators.
- * @param {Props} props - Tag configuration
- * @example
- * ```astro
- * // Basic tag
- * <Tag tag="javascript" />
+/* Component for rendering interactive tag elements.
  *
- * // Tag with count
+ * Props:
+ * - tag: string - Tag text identifier
+ * - count?: number | string - Optional count indicator
+ * - size?: "xs" | "sm" | "md" | "lg" - Size variant
+ * - class?: string - Additional CSS classes
+ *
+ * Example usage:
  * <Tag
- *   tag="typescript"
+ *   tag="javascript"
  *   count={5}
+ *   size="md"
+ *   class="my-tag"
  * />
  *
- * // Different sizes
- * <Tag tag="react" size="xs" />
- * <Tag tag="vue" size="sm" />
- * <Tag tag="svelte" size="md" />
- * <Tag tag="astro" size="lg" />
- *
- * // With custom styling
- * <Tag
- *   tag="web-components"
- *   class="my-custom-tag"
- * />
- * ```
- * @note
- * - Automatically formats tag text (replaces hyphens with spaces)
- * - Links to tag-specific pages (/tags/[tag])
- * - Supports four size variants: xs, sm, md, lg
- * - Optional count indicator
- * - Hover animations and transitions
- * - Accessible with proper aria attributes
+ * Notes:
+ * - Auto-formats tag text (replaces hyphens)
+ * - Links to tag-specific pages
+ * - Four size variants available
+ * - Hover animations
+ * - Theme-based styling
  */
 
-
-
 interface Props {
-	/** Tag text identifier */
+	// Tag text identifier //
 	tag: string;
-	/** Optional count of items with this tag */
+	// Optional count of items with this tag //
 	count?: number | string | undefined;
-	/** Size variant for the tag */
+	// Size variant for the tag //
 	size?: "xs" | "sm" | "md" | "lg";
-	/** Optional CSS classes */
+	// Optional CSS classes //
 	class?: string | undefined;
 }
 

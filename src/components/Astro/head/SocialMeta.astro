@@ -1,11 +1,23 @@
 ---
-/**
- * @description Component for generating comprehensive social media and SEO meta tags.
+/* Component for generating comprehensive social media and SEO meta tags.
  * Supports OpenGraph, Twitter Cards, and JSON-LD structured data.
  *
- * @param {SocialMetaProps} props
- * @example
- * ```astro
+ * Props:
+ * - title: string - Page title
+ * - description: string - Page description
+ * - type: "website" | "article" | "profile" | "book" | "product" - Content type
+ * - image: string - Social share image URL
+ * - canonicalURL: string - Canonical URL for SEO
+ * - platform: string - Platform/site name
+ * - locale: string - Content locale (default: "en_US")
+ * - author: string - Content author
+ * - publishedTime: string - Content publish date
+ * - modifiedTime: string - Content last modified date
+ * - keywords: string[] - SEO keywords
+ * - section: string - Content section
+ * - twitterCardType: "summary_large_image" | "summary" - Twitter card style
+ *
+ * Example usage:
  * <SocialMeta
  *   title="My Page Title"
  *   description="Page description for social sharing"
@@ -15,16 +27,14 @@
  *   publishedTime="2024-03-20"
  *   platform="My Website"
  * />
- * ```
  *
- * @note
+ * Notes:
  * - Automatically generates appropriate JSON-LD based on content type
  * - Supports article, product, and website schemas
  * - Ensures all image URLs are absolute
  * - Handles both Twitter and OpenGraph meta tags
  * - Provides SEO-friendly canonical URLs
- *
- * @returns Meta tags for social sharing, SEO, and structured data
+ * - Includes structured data for better search results
  */
 
 import Favicon from "@components/Astro/head/Favicon.astro";

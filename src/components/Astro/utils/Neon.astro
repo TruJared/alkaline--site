@@ -1,55 +1,25 @@
 ---
-/**
- * @component Neon
- * @description A component that applies a neon text effect with flicker animation.
- * Creates a glowing text effect with multiple layers of text shadows and optional
- * edge glow animation.
+/* Component for creating neon text effects with animations.
  *
- * @param {Props} props - Component properties
+ * Props:
+ * - titleText?: string - Text content
+ * - class?: string - Additional CSS classes
  *
- * @example Basic Usage
- * ```astro
+ * Example usage:
  * <Neon titleText="Glowing Text" />
- * ```
  *
- * @example With Custom Content
- * ```astro
- * <Neon>
- *   <span slot="neon">Custom Neon Text</span>
- * </Neon>
- * ```
- *
- * @example With Custom Styling
- * ```astro
- * <Neon
- *   titleText="Styled Neon"
- *   class="my-custom-class"
- * />
- * ```
- *
- * @features
- * - Neon glow effect using CSS text-shadow
- * - Flicker animation for realistic neon effect
- * - Edge glow animation with gradient overlay
- * - Customizable text content via props or slots
- * - Theme-based accent colors
- * - Accessibility support with title attribute
- * - Smooth transition effects
- *
- * @styling
- * - Uses theme accent color for glow effect
- * - Multiple shadow layers for depth
- * - Animated flicker effect
- * - Gradient edge glow animation
- * - Bold text with increased tracking
+ * Notes:
+ * - CSS text-shadow effects
+ * - Flicker animation
+ * - Theme accent colors
+ * - Custom slot support
+ * - Smooth transitions
  */
 
-
-
 interface Props {
-	/** Text content for the neon effect */
+	// Text content for the neon effect //
 	titleText?: string;
-	/** Additional CSS classes */
+	// Additional CSS classes //
 	class?: string |  undefined;
 }
 

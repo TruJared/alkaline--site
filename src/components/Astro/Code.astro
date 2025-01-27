@@ -1,43 +1,27 @@
 ---
-/**
- * @description Component wrapper for Astro's built-in Code component, providing syntax highlighting powered by Shiki.
- * @param {Props} props - Code configuration
- * @example
- * ```astro
- * // Basic usage
- * <Code
- *   code="const foo = 'bar';"
- *   lang="js"
- * />
+/* Component for rendering syntax-highlighted code blocks.
  *
- * // With word wrapping
+ * Props:
+ * - code: string - The code to display
+ * - lang: BundledLanguage | SpecialLanguage | LanguageRegistration - Programming language
+ * - wrap?: boolean - Enable word wrapping
+ * - inline?: boolean - Render as inline code
+ * - class?: string - Additional CSS classes
+ *
+ * Example usage:
  * <Code
- *   code="const longString = 'very long content...';"
- *   lang="js"
+ *   code="const greeting = 'Hello World';"
+ *   lang="typescript"
  *   wrap={true}
  * />
  *
- * // Inline code
- * <p>
- *   <Code
- *     code="const foo = 'bar';"
- *     lang="js"
- *     inline={true}
- *   />
- * </p>
- * ```
- *
- * @note
- * - Powered by Shiki for accurate syntax highlighting
- * - Supports all Shiki themes and languages
- * - No client-side JavaScript
+ * Notes:
+ * - Powered by Shiki for syntax highlighting
+ * - Uses theme from site configuration
+ * - Supports inline and block formats
  * - Optional word wrapping
- * - Inline code support
- * - Uses theme from SITE.shikiConfig
- *
- * @see {@link https://docs.astro.build/en/guides/syntax-highlighting/}
+ * - Accessible styling defaults
  */
-
 
 import type { BundledLanguage, LanguageRegistration, SpecialLanguage } from "shiki";
 

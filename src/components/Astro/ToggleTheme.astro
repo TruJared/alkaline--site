@@ -1,22 +1,19 @@
 ---
-/**
- * @description Component for theme switching with dropdown menu.
- * @param {Props} props - Theme toggle configuration
- * @example
- * ```astro
- * // Basic usage with default positioning
- * <ToggleTheme />
+/* Component for theme switching with dropdown menu.
  *
- * // With custom positioning
+ * Props:
+ * - class?: string - Additional CSS classes
+ *
+ * Example usage:
  * <ToggleTheme class="ml-auto" />
- * ```
- * @note
- * - Persists theme choice in localStorage
+ *
+ * Notes:
+ * - Persists theme in localStorage
  * - Supports system theme detection
  * - Keyboard accessible dropdown
  * - Handles view transitions
+ * - Theme-based styling
  */
-
 
 import { Icon } from "astro-icon/components";
 import { themeNames } from "@utils/themeNames";

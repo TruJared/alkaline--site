@@ -1,38 +1,25 @@
 ---
-/**
- * @description Component for rendering code blocks with syntax highlighting and copy functionality.
- * @param {Props} props - CodeCopy configuration
- * @example
- * ```astro
- * // Basic usage
+/* Component for rendering code blocks with a copy-to-clipboard button.
+ *
+ * Props:
+ * - code?: string - The code to display and copy
+ * - lang: BundledLanguage | SpecialLanguage | LanguageRegistration - Programming language
+ * - theme?: ShikiConfig["theme"] - Syntax highlighting theme
+ * - class?: string - Additional CSS classes
+ *
+ * Example usage:
  * <CodeCopy
  *   code="console.log('Hello World');"
  *   lang="javascript"
  * />
  *
- * // With custom theme
- * <CodeCopy
- *   code="print('Hello Python')"
- *   lang="python"
- * />
- *
- * // With custom styling
- * <CodeCopy
- *   code="<h1>Hello HTML</h1>"
- *   lang="html"
- *   class="my-custom-code"
- * />
- * ```
- *
- * @note
- * - Uses Astro's built-in Code component for syntax highlighting
+ * Notes:
  * - Includes copy-to-clipboard functionality
- * - Supports all Shiki themes and languages
- * - Accessible copy button with proper ARIA labels
- * - Responsive padding and positioning
+ * - Uses Astro's built-in Code component
+ * - Supports all Shiki themes
+ * - Accessible copy button
  * - Visual feedback on copy action
  */
-
 
 import type { ShikiConfig } from "astro";
 import type {

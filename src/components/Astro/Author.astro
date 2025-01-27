@@ -1,4 +1,26 @@
 ---
+/* Component for displaying author information with optional publication date and social links.
+ *
+ * Props:
+ * - authorId: number - Unique identifier for the author from AUTHORS config
+ * - pubDateTime: Date | null - Publication date/time (optional)
+ * - class: string | undefined - Optional CSS classes to apply
+ *
+ * Example usage:
+ * <Author
+ *   authorId={1}
+ *   pubDateTime={new Date("2024-03-20")}
+ *   class="my-custom-class"
+ * />
+ *
+ * Notes:
+ * - Looks up author details from AUTHORS configuration array
+ * - Displays author name, formatted publication date if provided
+ * - Renders social media links through SocialsCloud component
+ * - Uses theme-primary color and monospace font by default
+ * - Supports custom styling through class prop
+ */
+
 import type { Author } from "../../Types/types";
 
 import { AUTHORS } from "src/alkaline.config";

@@ -1,56 +1,40 @@
 ---
-/**
- * @component CopyToClipboard
- * @description A button component that copies text to the clipboard with visual feedback.
- * Automatically removes itself if the clipboard API is not available.
+/* Component for copying text to clipboard with visual feedback.
  *
- * @param {Props} props - Component properties
+ * Props:
+ * - textToCopy: string - Text to be copied
+ * - size?: number - Icon size in pixels (default: 12)
+ * - customIcon?: JSX.Element - Optional custom icon
+ * - ariaLabel?: string - Button label (default: "Copy to clipboard")
+ * - class?: string - Additional CSS classes
  *
- * @example Basic Usage
- * ```astro
- * <CopyToClipboard textToCopy="Text to be copied" />
- * ```
- *
- * @example Custom Size and Label
- * ```astro
+ * Example usage:
  * <CopyToClipboard
- *   textToCopy="Custom text"
+ *   textToCopy="Text to copy"
  *   size={16}
  *   ariaLabel="Copy code"
  * />
- * ```
  *
- * @example With Custom Icon
- * ```astro
- * <CopyToClipboard
- *   textToCopy="Text with custom icon"
- *   customIcon={<MyIcon />}
- *   class="my-custom-class"
- * />
- * ```
- *
- * @features
- * - Clipboard API integration
+ * Notes:
  * - Visual feedback on copy
- * - Customizable icon and size
- * - Accessibility support
- * - Graceful fallback when clipboard is unavailable
+ * - Clipboard API integration
+ * - Graceful fallback
  * - Theme-based styling
- * - Transition animations
+ * - Accessible button
  */
 
 import type { JSX } from 'astro/jsx-runtime';
 
 interface Props {
-	/** Text content to be copied to clipboard */
+	// Text content to be copied to clipboard //
 	textToCopy: string;
-	/** Size of the copy icon in pixels (default: 12) */
+	// Size of the copy icon in pixels (default: 12) //
 	size?: number;
-	/** Optional custom icon component */
+	// Optional custom icon component //
 	customIcon?: JSX.Element;
-	/** Accessibility label for the button (default: "Copy to clipboard") */
+	// Accessibility label for the button (default: "Copy to clipboard") //
 	ariaLabel?: string;
-	/** Additional CSS classes */
+	// Additional CSS classes //
 	class?: string | undefined;
 }
 

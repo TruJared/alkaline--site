@@ -1,48 +1,25 @@
 ---
-/**
- * @description Component for rendering accessible tooltips with optional neon styling.
- * @param {Props} props - Tooltip configuration
- * @example
- * ```astro
- * // Basic tooltip
+/* Component for rendering accessible tooltips.
+ *
+ * Props:
+ * - triggerText?: string - Text to trigger tooltip
+ * - tooltipText?: string - Tooltip content
+ * - neonify?: boolean - Enable neon effect
+ * - class?: string - Additional CSS classes
+ *
+ * Example usage:
  * <Tooltip
  *   triggerText="Hover me"
- *   tooltipText="Tooltip content"
- * />
- *
- * // With neon effect
- * <Tooltip
- *   triggerText="Glowing tooltip"
- *   tooltipText="Neon styled content"
+ *   tooltipText="More information"
  *   neonify={true}
  * />
  *
- * // Using slots for custom content
- * <Tooltip tooltipText="Custom tooltip">
- *   <span slot="trigger">
- *     Hover for info
- *   </span>
- *   <span slot="content">
- *     <em>Custom formatted</em> tooltip content
- *   </span>
- * </Tooltip>
- *
- * // With custom styling
- * <Tooltip
- *   triggerText="Styled tooltip"
- *   tooltipText="Custom styled tooltip"
- *   class="my-custom-tooltip"
- * />
- * ```
- *
- * @note
- * - Accessible with proper ARIA attributes
- * - Optional neon glow effect with theme colors
- * - Supports both text and custom slot content
- * - Responsive positioning with transform
- * - Smooth hover transitions
- * - Theme-based styling and borders
- * - Arrow indicator for better UX
+ * Notes:
+ * - Proper ARIA attributes
+ * - Optional neon effect
+ * - Custom slot support
+ * - Responsive positioning
+ * - Smooth transitions
  */
 
 interface Props {

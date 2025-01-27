@@ -1,46 +1,32 @@
 ---
-/**
- * @description Component for rendering a collection of social media links with icons.
- * @param {Props} props - SocialsCloud configuration
- * @example
- * ```astro
- * // Basic social links
+/* Component for rendering social media links with icons.
+ *
+ * Props:
+ * - socials: Array<{
+ *     platform: string,
+ *     url: string,
+ *     userName?: string
+ *   }> - Social media links
+ * - size?: number - Icon size in pixels
+ * - fill?: boolean - Use filled icons
+ * - class?: string - Additional CSS classes
+ *
+ * Example usage:
  * <SocialsCloud
  *   socials={[
- *     { platform: "github", url: "https://github.com/username" },
- *     { platform: "twitter", url: "https://twitter.com/username" }
+ *     { platform: "github", url: "https://github.com/user" },
+ *     { platform: "twitter", url: "https://twitter.com/user" }
  *   ]}
+ *   size={24}
  * />
  *
- * // With usernames and custom size
- * <SocialsCloud
- *   socials={[
- *     {
- *       platform: "github",
- *       url: "https://github.com/username",
- *       userName: "GithubUser"
- *     }
- *   ]}
- *   size={32}
- * />
- *
- * // With filled icons
- * <SocialsCloud
- *   socials={socials}
- *   fill={true}
- *   class="my-socials"
- * />
- * ```
- *
- * @note
- * - Automatically adjusts icon size based on number of links
- * - Supports filled and outlined icon variants
- * - Responsive flex layout with wrapping
- * - Hover effects for interactive feedback
- * - Accessible links with proper titles
- * - Maximum width constraint for better layout control
+ * Notes:
+ * - Auto-adjusts icon size based on count
+ * - Supports filled/outlined icons
+ * - Responsive flex layout
+ * - Hover effects
+ * - Accessible links
  */
-
 
 import SocialIcon from "./utils/SocialIcon.astro";
 

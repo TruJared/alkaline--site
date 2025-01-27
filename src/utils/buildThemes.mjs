@@ -91,7 +91,7 @@ async function main() {
   console.log('');
   console.log(chalk.magentaBright('Astro preparing for lift off! 🚁'));
   console.log('');
-  console.log(chalk.bgYellow(' ~~ Note that the uncached build times are somewhat slow... ~~ '));
+  console.log(chalk.bgYellow(' ~~ Note that the uncached build times are somewhat slow...'));
   console.log('');
 }
 

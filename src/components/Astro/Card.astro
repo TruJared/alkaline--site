@@ -1,58 +1,48 @@
 ---
-/**
- * @component Card
- * @description A versatile card component with customizable styling and optional icon.
- * Supports alternate color schemes and configurable shadow depths.
+/* Component for rendering a styled card with optional icon and customizable appearance.
  *
- * @param {Props} props - Component properties
+ * Props:
+ * - title: string - Card header text
+ * - description: string - Main content text
+ * - alt?: boolean - Use alternate color scheme
+ * - name?: string - Icon name (e.g. "ri:star")
+ * - alignIcon?: "left" | "right" | null - Icon position
+ * - shadowSize?: "sm" | "md" | "lg" | "none" | null - Shadow depth
+ * - class?: string - Additional CSS classes
  *
- * @example Basic Usage
- * ```astro
+ * Example usage:
  * <Card
- *   title="Feature"
+ *   title="Feature Card"
  *   description="Description of the feature"
+ *   name="ri:star"
+ *   alignIcon="left"
+ *   shadowSize="md"
  * />
- * ```
  *
- * @example With Icon and Custom Shadow
- * ```astro
- * <Card
- *   title="Service"
- *   description="Our service details"
- *   iconSrc="icon-name"
- *   shadowSize="lg"
- *   alignIcon="right"
- * />
- * ```
- *
- * @example Alternate Color Scheme
- * ```astro
- * <Card
- *   title="About"
- *   description="About us content"
- *   alt={true}
- *   class="my-custom-class"
- * />
- * ```
- *
+ * Notes:
+ * - Uses theme colors for consistent styling
+ * - Supports responsive layouts
+ * - Optional icon integration with astro-icon
+ * - Configurable shadow depths
+ * - Alternate color scheme option
  */
 
 import { Icon } from "astro-icon/components";
 
 interface Props {
-	/** Card title text */
+	// Card title text //
 	title: string;
-	/** Card description content */
+	// Card description content //
 	description: string;
-	/** Use alternate color scheme */
+	// Use alternate color scheme //
 	alt?: boolean;
-	/** Optional icon source name i.e  ri:star */
+	// Optional icon source name i.e  ri:star //
 	name?: string;
-	/** Optional left/right icon alignment */
+	// Optional left/right icon alignment //
 	alignIcon?: "left" | "right" | null;
-	/** Shadow size variant */
+	// Shadow size variant //
 	shadowSize?: "sm" | "md" | "lg" | "none" | null;
-	/** Additional CSS classes */
+	// Additional CSS classes //
 	class?: string | undefined;
 }
 

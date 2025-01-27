@@ -1,9 +1,12 @@
 ---
-/**
- * @description Component for rendering the main navigation with theme toggle.
- * @param {NavProps} props - Navigation configuration
- * @example
- * ```astro
+/* Component for rendering the main navigation with theme toggle.
+ *
+ * Props:
+ * - links: NavEntry[] - Array of navigation links
+ * - themeNames?: string[] - Optional theme names for toggle
+ * - class?: string - Additional CSS classes
+ *
+ * Example usage:
  * <Nav
  *   links={[
  *     { href: "/", text: "Home" },
@@ -12,23 +15,24 @@
  *   ]}
  *   class="my-custom-nav"
  * />
- * ```
- * @note
- * - Automatically includes theme toggle button
+ *
+ * Notes:
+ * - Includes theme toggle button
  * - Responsive design with flex layout
- * - Supports custom styling via class prop
  * - Accessible with proper ARIA labels
+ * - Supports custom styling
+ * - Automatically handles mobile layout
  */
 
 import ToggleTheme from "@components/Astro/ToggleTheme.astro";
 import type { NavEntry } from "../../Types/types";
 
 interface Props {
-	/** Array of navigation links */
+	// Array of navigation links //
 	links: NavEntry[];
-	/** Optional theme names for the toggle */
+	// Optional theme names for the toggle //
 	themeNames?: string[];
-	/** Optional CSS classes */
+	// Optional CSS classes //
 	class?: string | undefined;
 }
 

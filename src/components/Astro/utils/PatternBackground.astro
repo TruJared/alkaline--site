@@ -1,4 +1,30 @@
 ---
+/* Component for rendering decorative SVG pattern backgrounds.
+ *
+ * Props:
+ * - pattern: string | preset - SVG path or preset name
+ * - patternOpacity?: number - Pattern opacity (0-1)
+ * - patternSize?: number - Pattern size in pixels
+ * - strokeWidth?: number - Pattern stroke width
+ * - animate?: boolean - Enable animation
+ * - class?: string - Additional CSS classes
+ *
+ * Example usage:
+ * <PatternBackground
+ *   pattern="dots"
+ *   patternOpacity={0.1}
+ *   patternSize={30}
+ *   animate={true}
+ * />
+ *
+ * Notes:
+ * - Built-in pattern presets
+ * - Custom pattern support
+ * - Responsive masking
+ * - Optional animation
+ * - Accessible (aria-hidden)
+ */
+
 // common pattern presets
 const PATTERN_PRESETS = {
 	dots: "M2 2h2v2H2z",
@@ -9,17 +35,17 @@ const PATTERN_PRESETS = {
 } as const;
 
 interface Props {
-	/** SVG path data for the pattern or preset name */
+	// SVG path data for the pattern or preset name //
 	pattern: string | keyof typeof PATTERN_PRESETS;
-	/** Opacity value for the pattern (0-1) */
+	// Opacity value for the pattern (0-1) //
 	patternOpacity?: number;
-	/** Pattern size in pixels */
+	// Pattern size in pixels //
 	patternSize?: number;
-	/** Pattern stroke width */
+	// Pattern stroke width //
 	strokeWidth?: number;
-	/** Enable/disable pattern animation */
+	// Enable/disable pattern animation //
 	animate?: boolean;
-	/** Optional CSS classes */
+	// Optional CSS classes //
 	class?: string |  undefined;
 }
 

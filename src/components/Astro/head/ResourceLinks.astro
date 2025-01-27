@@ -1,9 +1,20 @@
 ---
-/**
- * @description Component for managing resource hints to optimize resource loading.
- * @param {ResourceLinksProps} props - Resource hint configurations
- * @example
- * ```astro
+/* Component for managing resource hints to optimize resource loading.
+ *
+ * Props:
+ * - dnsPrefetchUrls: string[] - URLs for DNS prefetching
+ * - preconnectUrls: Array of connection configs {
+ *     href: string,
+ *     crossorigin?: boolean
+ *   }
+ * - preloadResources: Array of resource configs {
+ *     href: string,
+ *     as: string,
+ *     type?: string
+ *   }
+ * - prefetchResources: string[] - Resources to prefetch
+ *
+ * Example usage:
  * <ResourceLinks
  *   // Pre-resolve DNS for external domains
  *   dnsPrefetchUrls={['https://fonts.googleapis.com']}
@@ -24,14 +35,12 @@
  *   // Background loading for future navigation
  *   prefetchResources={['/next-page.js']}
  * />
- * ```
- * @note
+ *
+ * Notes:
  * - dns-prefetch: Best for third-party domains
  * - preconnect: Use sparingly, as it's resource-intensive
  * - preload: For critical above-the-fold resources
  * - prefetch: For likely next-page resources
- *
- * @returns Resource hint link tags
  */
 
 interface ResourceLinksProps {
@@ -48,7 +57,6 @@ const {
 	prefetchResources = [],
 } = Astro.props as ResourceLinksProps;
 ---
-
 
 {dnsPrefetchUrls?.map((url) => <link rel="dns-prefetch" href={url} />)}
 

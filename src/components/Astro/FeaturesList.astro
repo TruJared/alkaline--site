@@ -1,18 +1,14 @@
 ---
-/**
- * @description Component for rendering a list of features with titles and optional descriptions.
- * @param {Props} props - FeaturesList configuration
- * @example
- * ```astro
- * // Basic features list
- * <FeaturesList
- *   features={[
- *     { title: "Easy Setup" },
- *     { title: "Fast Performance" }
- *   ]}
- * />
+/* Component for rendering a list of features with titles and optional descriptions.
  *
- * // Features with descriptions
+ * Props:
+ * - features: Array<{
+ *     title: string,
+ *     description?: string
+ *   }> - Array of feature objects
+ * - class?: string - Additional CSS classes
+ *
+ * Example usage:
  * <FeaturesList
  *   features={[
  *     {
@@ -24,25 +20,16 @@
  *       description: "Automatic theme switching"
  *     }
  *   ]}
- * />
- *
- * // With custom styling
- * <FeaturesList
- *   features={features}
  *   class="my-custom-list"
  * />
- * ```
  *
- * @note
+ * Notes:
  * - Animated highlight effect on hover
  * - Monospace font for feature titles
  * - Indented descriptions with italic styling
  * - Smooth transitions for visual effects
- * - Accessible structure with proper heading hierarchy
  * - Theme-based accent colors
  */
-
-
 
 interface Props {
 	features: {

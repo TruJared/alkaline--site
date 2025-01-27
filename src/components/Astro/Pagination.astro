@@ -1,49 +1,48 @@
 ---
-/**
- * @description Component for rendering pagination controls with previous/next navigation.
- * @param {Props} props - Pagination configuration
- * @example
- * ```astro
- * // Basic pagination
- * <Pagination page={page} />
+/* Component for rendering pagination controls.
  *
- * // With custom styling
+ * Props:
+ * - page: {
+ *     currentPage: number,
+ *     lastPage: number,
+ *     url: {
+ *       prev?: string,
+ *       next?: string
+ *     }
+ *   } - Pagination state
+ * - class?: string - Additional CSS classes
+ *
+ * Example usage:
  * <Pagination
- *   page={page}
- *   class="my-custom-pagination"
+ *   page={{
+ *     currentPage: 2,
+ *     lastPage: 5,
+ *     url: {
+ *       prev: "/page/1",
+ *       next: "/page/3"
+ *     }
+ *   }}
  * />
  *
- * // The page object should contain:
- * const page = {
- *   currentPage: 1,
- *   lastPage: 5,
- *   url: {
- *     prev: "/page/1",
- *     next: "/page/2"
- *   }
- * };
- * ```
- * @note
- * - Displays current page number and total pages
- * - Previous/Next navigation buttons
- * - Automatically disables buttons at boundaries
- * - Uses theme colors for consistent styling
- * - Responsive layout with flex positioning
+ * Notes:
+ * - Shows current/total pages
+ * - Previous/Next navigation
+ * - Auto-disabled buttons at boundaries
+ * - Theme-based styling
+ * - Responsive layout
  */
 
-
-
 interface Props {
-	/** Page object containing navigation and current page info */
+	// Page object containing navigation and current page info //
 	page: {
 		currentPage: number;
 		lastPage: number;
 		url: {
-			prev: string | undefined;
-			next: string | undefined;
+			prev?: string;
+			next?: string;
 		};
 	};
-	/** Optional CSS classes */
+	// Optional CSS classes //
 	class?: string |  undefined;
 }
 

@@ -1,41 +1,29 @@
 ---
-/**
- * @description Component for rendering a collection of tags with optional count indicators.
- * @param {Props} props - TagCloud configuration
- * @example
- * ```astro
- * // Basic tag cloud
+/* Component for rendering a collection of tags.
+ *
+ * Props:
+ * - tags: Array<{
+ *     name: string,
+ *     count?: number | string
+ *   }> - Array of tags
+ * - class?: string - Additional CSS classes
+ *
+ * Example usage:
  * <TagCloud
  *   tags={[
- *     { name: "javascript" },
- *     { name: "typescript" }
+ *     { name: "javascript", count: 5 },
+ *     { name: "typescript", count: 3 }
  *   ]}
+ *   class="my-tags"
  * />
  *
- * // Tags with count
- * <TagCloud
- *   tags={[
- *     { name: "react", count: 5 },
- *     { name: "vue", count: 3 }
- *   ]}
- * />
- *
- * // With custom styling
- * <TagCloud
- *   tags={tags}
- *   class="my-custom-cloud"
- * />
- * ```
- *
- * @note
- * - Flexible inline layout with wrapping
- * - Large size tags for better visibility
- * - Optional count display for each tag
- * - Consistent spacing between tags
- * - Theme-based accent colors for divider
- * - Responsive padding and margins
+ * Notes:
+ * - Flexible inline layout
+ * - Optional count display
+ * - Consistent tag spacing
+ * - Theme-based colors
+ * - Responsive design
  */
-
 
 import Tag from "@components/Astro/utils/Tag.astro";
 

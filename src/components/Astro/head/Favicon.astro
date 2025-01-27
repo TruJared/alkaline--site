@@ -1,22 +1,16 @@
 ---
-/**
- * @description Component for managing favicon and touch icons across different devices and browsers.
- * @param {FaviconProps} props - Favicon configuration
- * @example
- * ```astro
- * // Vector favicon (SVG)
- * <Favicon
- *   url="/favicon.svg"
- *   isVector={true}
- * />
+/*
+ * Component for managing favicon and touch icons across different devices and browsers.
  *
- * // Raster favicon (PNG)
- * <Favicon
- *   url="/favicon.png"
- *   isVector={false}
- * />
- * ```
- * @note
+ * Props:
+ * - url: string - The URL of the favicon. Default is "/favicon.svg"
+ * - isVector: boolean - Indicates if the favicon is a vector image
+ *
+ * Example usage:
+ * <Favicon url="/favicon.svg" isVector={true} />
+ * <Favicon url="/favicon.png" isVector={false} />
+ *
+ * Notes:
  * - Automatically handles multiple sizes for PNG favicons
  * - Supports both vector (SVG) and raster (PNG) formats
  * - Includes Apple touch icon support

@@ -1,37 +1,37 @@
 ---
-/**
- * @description Component for rendering a collection of Tag components in a flexible layout.
- * @param {Props} props - Tags configuration
- * @example
- * ```astro
- * // Basic tags list
- * <Tags tags={["javascript", "typescript", "react"]} />
- *
- * // With custom styling
- * <Tags
- *   tags={["astro", "vue", "svelte"]}
- *   class="my-custom-tags"
- * />
- *
- * // Empty state handling
- * <Tags tags={[]} />
- * ```
- * @note
- * - Renders multiple Tag components in a flex container
- * - Automatically handles wrapping for responsive layouts
- * - Uses xs size for individual tags by default
- * - Customizable through class prop
- * - Zero-margin container for better layout control
- */
+//
+ // @description Component for rendering a collection of Tag components in a flexible layout.
+ // @param {Props} props - Tags configuration
+ // @example
+ // ```astro
+ // // Basic tags list
+ // <Tags tags={["javascript", "typescript", "react"]} />
+
+ // // With custom styling
+ // <Tags
+ //   tags={["astro", "vue", "svelte"]}
+ //   class="my-custom-tags"
+ // />
+
+ // // Empty state handling
+ // <Tags tags={[]} />
+ // ```
+ // @note
+ // - Renders multiple Tag components in a flex container
+ // - Automatically handles wrapping for responsive layouts
+ // - Uses xs size for individual tags by default
+ // - Customizable through class prop
+ // - Zero-margin container for better layout control
+ //
 
 
 
 import Tag from "@components/Astro/utils/Tag.astro";
 
 interface Props {
-	/** Array of tag strings to display */
+	// Array of tag strings to display //
 	tags: string[];
-	/** Optional CSS classes */
+	// Optional CSS classes //
 	class?: string | undefined;
 }
 

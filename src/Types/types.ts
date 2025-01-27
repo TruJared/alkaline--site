@@ -72,4 +72,4 @@ export type Blog = {
 export type Docs = Blog;
 
 // This type is auto-generated. Do not edit manually.
-export type ThemeNames = 'theme-light' | 'theme-dark' | 'theme-deep-sea' | 'theme-invisible' | 'theme-leet' | 'theme-mint-chocolate' | 'theme-neon-bliss' | 'theme-old-couch' | 'theme-peppermint' | 'theme-pop-punk' | 'theme-refresher' | 'theme-slime' | 'theme-syntax' | 'theme-vanilla';
+export type ThemeNames = 'theme-light' | 'theme-dark' | 'theme-choco-mint' | 'theme-deep-sea' | 'theme-invisible' | 'theme-leet' | 'theme-neon-bliss' | 'theme-old-couch' | 'theme-peppermint' | 'theme-pop-punk' | 'theme-refresher' | 'theme-slime' | 'theme-syntax' | 'theme-vanilla';
