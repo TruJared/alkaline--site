@@ -1,0 +1,44 @@
+---
+import { SITE, COLLECTION_NAMES_LIST } from "src/alkaline.config";
+import type { PaginateFunction } from "astro";
+import type { ContentEntryMap } from "astro:content";
+
+import { getCollection } from "astro:content";
+import Posts from "@layouts/Posts.astro";
+
+type Post = {
+	data: {
+		tags?: string[];
+	};
+};
+
+export async function getStaticPaths({
+	paginate,
+}: {
+	paginate: PaginateFunction;
+}) {
+	const posts: Post[] = (
+		await Promise.all(
+			COLLECTION_NAMES_LIST.map(
+				async (collection) =>
+					await getCollection(collection as keyof ContentEntryMap)
+			)
+		)
+	).flat();
+
+	return paginate(posts, {
+		pageSize: SITE.postsPerPage,
+	});
+}
+
+const { page } = Astro.props;
+const posts = page?.data ?? [];
+---
+
+<Posts
+	posts={posts}
+	page={page}
+	subtitle={`Documentation`}
+	collectionName={`docs`}
+	title={`Docs`}
+/>

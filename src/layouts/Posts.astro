@@ -107,5 +107,7 @@ const options = { "rounded-theme": true };
 			))
 		}
 	</section>
-	{SITE.postsPerPage < page?.total && <Pagination page={page} />}
+	<div class="flex justify-center">
+		{SITE.postsPerPage < page?.total && <Pagination page={page} />}
+	</div>
 </Layout>
