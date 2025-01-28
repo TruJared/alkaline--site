@@ -5,6 +5,9 @@ import Card from "@components/Astro/Card.astro";
 import coverImage from "@assets/alk-cover-2.webp";
 import Link from "@components/Astro/Link.astro";
 
+import { Image } from "astro:assets";
+import Bing from "@assets/bing.jpg";
+
 const description =
 	"Build modern websites in minutes with Alkaline - a near-zero-dependency, framework-less, type-safe Astro starter kit. Featuring 14 unique color themes and more than 2 dozen pre-built Astro components, Alkaline is perfect for blogs, portfolios, e-commerce sites, and more.";
 ---
@@ -43,23 +46,25 @@ const description =
 	</section>
 
 	<section
-		class="flex flex-col items-center justify-center mt-12 mb-80 build-in"
+		class="flex flex-col items-center justify-center mt-12 mb-44 build-in"
 	>
-		<p class="text-2xl max-w-7xl italic text-center md:max-w-screen-lg mb-10">
+		<h2
+			class="bg-theme-secondary text-theme-secondary p-5 text-center uppercase w-full mb-12 lg:w-auto"
+		>
+		Code Easy
+		</h2>
+		<p class="text-2xl max-w-7xl italic text-center md:max-w-screen-lg">
 			Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium, ut
 			asperiores totam inventore non quam. Iste accusantium placeat ipsum?
 			Dignissimos explicabo cupiditate dicta. Odio nulla debitis laudantium
 			iusto, accusantium dolorem?
 		</p>
-		<h2 class="bg-theme-accent-alt p-5 text-center uppercase">
-			Start Building Today
-		</h2>
 		<Link href="/docs" class="btn btn-primary mt-6" text="View Documentation" />
 	</section>
 
 	<section
 		id="features"
-		class="flex flex-wrap flex-row justify-center gap-12 lg:justify-around build-in"
+		class="flex flex-wrap flex-row justify-center gap-12 lg:justify-around"
 	>
 		<Card
 			title="Fast"
@@ -81,18 +86,19 @@ const description =
 		/>
 	</section>
 
-	<section
-		class="flex flex-col items-center justify-center mb-64 mt-12 build-in"
-	>
-		<p class="text-2xl max-w-7xl italic text-center md:max-w-screen-lg mb-10">
+	<section class="flex flex-col items-center justify-center mb-64 mt-12">
+		<h2
+			class="bg-theme-secondary text-theme-secondary p-5 text-center uppercase mb-12 lg:w-auto"
+		>
+			Created For Developers
+		</h2>
+		<p class="text-2xl max-w-7xl italic text-center md:max-w-screen-lg">
 			Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium, ut
 			asperiores totam inventore non quam. Iste accusantium placeat ipsum?
 			Dignissimos explicabo cupiditate dicta. Odio nulla debitis laudantium
 			iusto, accusantium dolorem?
 		</p>
-		<h2 class="bg-theme-accent-alt p-5 text-center uppercase">
-			Created For Developers
-		</h2>
+
 		<Link
 			href="https://github.com/jaredmakes/alkaline"
 			class="btn btn-primary mt-6"
@@ -100,22 +106,28 @@ const description =
 		/>
 	</section>
 
-	<section class="flex flex-col items-center justify-center mb-64 fade-in">
-		<p class="text-2xl max-w-7xl italic text-center md:max-w-screen-lg mb-10">
-			Thanks to the generosity of countless developers and teachers, I've
-			achieved more than I imagined possible. I hope Alkaline helps to pave the
-			way for other to do the same.
-		</p>
-		<h2 class="bg-theme-accent-alt p-5 text-center uppercase">
-			You Got This!
-		</h2>
-		<div
-			class="flex flex-wrap flex-row justify-center gap-12 lg:justify-around"
+	<section class="flex flex-col items-center justify-center mb-32">
+		<Image
+			src={Bing}
+			alt="a quote from Chandler Bing from Friends. Hard work never killed anybody, but why take a chance?"
+			class="shadow-md shadow-theme-primary"
+			loading="lazy"
+			width={1000}
+			height={1000}
+			format="webp"
+
+		/>
+
+		<h2
+			class="bg-theme-secondary text-theme-secondary p-5 text-center uppercase mt-12 lg:w-auto"
 		>
-			<Link href="#" class="btn btn-primary mt-6" text="Get Started" />
-			<Link href="#" class="btn btn-primary mt-6" text="Configuration" />
-			<Link href="#" class="btn btn-primary mt-6" text="Components" />
-			<Link href="#" class="btn btn-primary mt-6" text="Themes" />
+			Get Started Today
+		</h2>
+		<div class="flex flex-wrap gap-3 sm:gap-6 md:gap-8 lg:gap-10 mt-2 justify-start">
+			<Link href="#" class="btn btn-primary mt-2" text="Get Started" />
+			<Link href="#" class="btn btn-primary mt-2" text="Configuration" />
+			<Link href="#" class="btn btn-primary mt-2" text="Components" />
+			<Link href="#" class="btn btn-primary mt-2" text="Themes" />
 		</div>
 	</section>
 </Layout>
@@ -126,6 +138,4 @@ const description =
 	}
 </style>
 
-<script>
-
-</script>
+<script></script>
