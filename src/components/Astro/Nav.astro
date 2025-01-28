@@ -24,8 +24,10 @@
  * - Automatically handles mobile layout
  */
 
-import ToggleTheme from "@components/Astro/ToggleTheme.astro";
 import type { NavEntry } from "../../Types/types";
+
+import ToggleTheme from "@components/Astro/ToggleTheme.astro";
+import Link from "@components/Astro/Link.astro";
 
 interface Props {
 	// Array of navigation links //
@@ -47,10 +49,8 @@ const { links = [], class: className } = Astro.props;
 	<ul class="inline-flex flex-wrap mb-2 sm:mb-0 sm:mr-6">
 		{
 			links.map((obj) => (
-				<li class="pr-2 m-0 py-0 first:pl-0">
-					<a href={obj.href} class="text-lg px-2 py-0 m-0 first:pl-0">
-						{obj.text}
-					</a>
+				<li class=" mb-2 py-0 pr-4 first:pl-0 sm:mb-0 md:pr-6">
+					<Link href={obj.href} class="text-lg px-2 py-0 m-0 first:pl-0" text={obj.text} />
 				</li>
 			))
 		}

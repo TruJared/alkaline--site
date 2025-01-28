@@ -59,7 +59,7 @@ const options = {
 	<div class="flex flex-row items-center justify-center w-full">
 		<h1
 			class:list={[
-				"py-2 w-full p-10 m-1",
+				"py-2 w-full p-10 m-2",
 				{
 					"is-title-alt leading-none py-5 text-center": showTitleBackground,
 					"is-title p-0 pl-2": !showTitleBackground,
@@ -71,19 +71,10 @@ const options = {
 
 			{
 				logoImg && (
-					<span
-						class:list={[
-							"flex items-center justify-center mx-5",
-						]}
-					>
-						<Image
-							src={logoImg}
-							alt="Logo"
-							width={64}
-							height={64}
-							class="rounded-full border-2 border-theme-primary mr-6"
-						/>
-
+					<span class="flex items-center justify-center w-full">
+						<span class="rounded-full border-2 border-theme-primary mr-6 overflow-hidden">
+							<Image src={logoImg} alt="Logo" width={64} height={64} class="" />
+						</span>
 						{title}
 					</span>
 				)
