@@ -98,7 +98,7 @@ export const NAVIGATION: NavEntry[] = [
 		text: "Elements",
 	},
 	{
-		href: "/features/feature-list",
+		href: "/features",
 		text: "Features",
 	},
 	{
@@ -110,7 +110,7 @@ export const NAVIGATION: NavEntry[] = [
 		text: "Tags",
 	},
 	{
-		href: "/features/faq",
+		href: "/faq",
 		text: "FAQ",
 	},
 	{
