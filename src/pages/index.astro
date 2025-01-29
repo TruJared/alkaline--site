@@ -9,7 +9,38 @@ import { Image } from "astro:assets";
 import Bing from "@assets/bing.jpg";
 
 const description =
-	"Build modern websites in minutes with Alkaline - a near-zero-dependency, framework-less, type-safe Astro starter kit. Featuring 14 unique color themes and more than 2 dozen pre-built Astro components, Alkaline is perfect for blogs, portfolios, e-commerce sites, and more.";
+	"Build modern websites in minutes with Alkaline - a near-zero-dependency, framework-less, type-safe Astro starter kit. Featuring 14 unique color themes and more than 2 dozen pre-built Astro components, Alkaline is a great starting point for blogs, portfolios, e-commerce sites, and more.";
+
+const links = [
+	{
+		href: "/docs/start-here",
+		text: "Get Started",
+	},
+	{
+		href: "/docs/configuration",
+		text: "Configuration",
+	},
+	{
+		href: "/docs/components",
+		text: "Components",
+	},
+	{
+		href: "/docs/themes",
+		text: "Themes",
+	},
+	{
+		href: "/docs/design-system",
+		text: "Design System",
+	},
+	{
+		href: "/docs/about-alkaline",
+		text: "About Alkaline",
+	},
+];
+
+const options = {
+	"rounded-theme": true,
+};
 ---
 
 <Layout>
@@ -23,7 +54,7 @@ const description =
 		animate={true}
 	/>
 	<section
-		class="flex flex-wrap flex-row justify-center gap-12 mx-0 mt-32 lg:mt-6 lg:justify-around build-in"
+		class="flex flex-wrap flex-row justify-center gap-12 mx-0 mt-32 lg:mt-24 lg:justify-around build-in"
 	>
 		<Card
 			title="Configure"
@@ -46,25 +77,30 @@ const description =
 	</section>
 
 	<section
-		class="flex flex-col items-center justify-center mt-12 mb-44 build-in"
+		class="flex flex-col items-center justify-center mt-16 mb-48 build-in"
 	>
 		<h2
-			class="bg-theme-secondary text-theme-secondary p-5 text-center uppercase w-full mb-12 lg:w-auto"
+			class:list={[
+				"bg-theme-secondary text-theme-secondary p-5 text-center uppercase w-full mb-8 lg:w-auto",
+				options,
+			]}
 		>
-		Code Easy
+			Work Easy
 		</h2>
-		<p class="text-2xl max-w-7xl italic text-center md:max-w-screen-lg">
-			Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium, ut
-			asperiores totam inventore non quam. Iste accusantium placeat ipsum?
-			Dignissimos explicabo cupiditate dicta. Odio nulla debitis laudantium
-			iusto, accusantium dolorem?
+		<p
+			class="text-2xl max-w-7xl leading-relaxed text-center md:max-w-screen-lg"
+		>
+			If your package.json looks like a phone book (remember those?) and your
+			build process requires a small server farm, you might be doing modern web
+			dev. Alkaline brings back the simplicity without sacrificing the power,
+			because working hard is overrated.
 		</p>
 		<Link href="/docs" class="btn btn-primary mt-6" text="View Documentation" />
 	</section>
 
 	<section
-		id="features"
-		class="flex flex-wrap flex-row justify-center gap-12 lg:justify-around"
+		id="Features"
+		class="flex flex-wrap flex-row justify-center gap-12 mt-48 lg:justify-around"
 	>
 		<Card
 			title="Fast"
@@ -86,17 +122,21 @@ const description =
 		/>
 	</section>
 
-	<section class="flex flex-col items-center justify-center mb-32 mt-12">
+	<section class="flex flex-col items-center justify-center mb-48 mt-16">
 		<h2
-			class="bg-theme-secondary text-theme-secondary p-5 text-center uppercase mb-12 lg:w-auto"
+			class:list={[
+				"bg-theme-secondary text-theme-secondary p-5 text-center uppercase mb-8 lg:w-auto",
+				options,
+			]}
 		>
 			Created For Developers
 		</h2>
-		<p class="text-2xl max-w-7xl italic text-center md:max-w-screen-lg">
-			Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium, ut
-			asperiores totam inventore non quam. Iste accusantium placeat ipsum?
-			Dignissimos explicabo cupiditate dicta. Odio nulla debitis laudantium
-			iusto, accusantium dolorem?
+		<p
+			class="text-2xl max-w-7xl leading-relaxed text-center md:max-w-screen-lg"
+		>
+			Your tools should be accessible, not intimidating. Whether you're building
+			your first blog or your next startup, Alkaline gives you the foundation to
+			move fast and build things that last.
 		</p>
 
 		<Link
@@ -106,28 +146,37 @@ const description =
 		/>
 	</section>
 
-	<section class="flex flex-col items-center justify-center mb-32">
+	<section class="flex flex-col items-center justify-center mb-32 mt-12">
 		<Image
 			src={Bing}
 			alt="a quote from Chandler Bing from Friends. Hard work never killed anybody, but why take a chance?"
-			class="shadow-md shadow-theme-primary"
+			class:list={["shadow-md shadow-theme-primary", options]}
 			loading="lazy"
-			width={1000}
-			height={1000}
+			width={750}
+			height={500}
 			format="webp"
-
 		/>
 
 		<h2
-			class="bg-theme-secondary text-theme-secondary p-5 text-center uppercase mt-12 lg:w-auto"
+			class:list={[
+				"bg-theme-secondary text-theme-secondary p-5 text-center uppercase mt-12 lg:w-auto",
+				options,
+			]}
 		>
 			Get Started Today
 		</h2>
-		<div class="flex flex-wrap gap-3 sm:gap-6 md:gap-8 lg:gap-10 mt-2 justify-start">
-			<Link href="#" class="btn btn-primary mt-2" text="Get Started" />
-			<Link href="#" class="btn btn-primary mt-2" text="Configuration" />
-			<Link href="#" class="btn btn-primary mt-2" text="Components" />
-			<Link href="#" class="btn btn-primary mt-2" text="Themes" />
+		<div
+			class="flex flex-wrap gap-3 sm:gap-6 md:gap-8 lg:gap-10 mt-2 justify-start"
+		>
+			{
+				links.map((link) => (
+					<Link
+						href={link.href}
+						class="btn btn-primary mt-2"
+						text={link.text}
+					/>
+				))
+			}
 		</div>
 	</section>
 </Layout>

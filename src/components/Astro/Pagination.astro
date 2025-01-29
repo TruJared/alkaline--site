@@ -49,11 +49,7 @@ interface Props {
 const { page, class: className } = Astro.props;
 const { currentPage, lastPage, url } = page;
 const { next, prev } = url;
-
 ---
-{
-console.log('page,', page)
-}
 
 <nav class:list={["flex justify-start items-center", className]}>
 	<a href={prev} class:list={["text-theme-primary p-2", { disabled: !prev }]}>

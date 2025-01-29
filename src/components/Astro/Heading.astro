@@ -7,7 +7,7 @@
  * - class?: string - Additional CSS classes
  *
  * Example usage:
- * <PageHeading
+ * <Heading
  *   text="Our Services"
  *   showHeadingBackground={true}
  *   class="my-heading"
@@ -27,18 +27,21 @@ interface Props {
 	// Controls whether heading has background styling //
 	showHeadingBackground?: boolean;
 	// Optional CSS classes //
-	class?: string |  undefined;
+	class?: string | undefined;
 }
 
 const { text, showHeadingBackground = true, class: className } = Astro.props;
 ---
 
 <div
-	class:list={["flex justify-center mt-12 mb-10 md:mt-24 md:mb-12", className]}
+	class:list={[
+		"flex mt-12 mb-10 md:mt-24 md:mb-12",
+		className,
+	]}
 >
 	<p
 		class:list={[
-			"h6 text-4xl text-center mx-4 capitalize leading-relaxed",
+			" tracking-widest text-4xl font-medium capitalize leading-relaxed mx-auto",
 			{
 				"bg-theme-secondary text-theme-secondary leading-none p-4 inline-block":
 					showHeadingBackground,

@@ -23,16 +23,7 @@ const postCollectionSchema = {
 	isFeatured: z.boolean().optional(),
 	isDraft: z.boolean().optional(),
 	tags: z.array(z.string()).optional(),
-	image: z
-		.object({
-			src: z.string(),
-			alt: z.string().optional(),
-			width: z.number().optional(),
-			height: z.number().optional(),
-			format: z.enum(["webp", "jpg", "png", "svg"]).optional(),
-			quality: z.number().min(0).max(100).optional(),
-		})
-		.optional(),
+
 	canonicalURL: z.string().url().optional(),
 };
 
@@ -46,30 +37,33 @@ let collectionSchemas: { [key: string]: any } = {};
 // @ts-ignore
 collectionNames.forEach((collectionName) => {
 	collectionSchemas[collectionName] = defineCollection({
-	loader: glob({ pattern: '*.md*', base: "./src/data/"+collectionName.toLowerCase() }),
-		schema: () =>
+		loader: glob({ pattern: '*.md*', base: "./src/data/" + collectionName.toLowerCase() }),
+		schema: ({ image }) => // allows for images in the frontmatter
 			z.object({
 				...postCollectionSchema,
-
-				// * -- Example overrides -- * //
-
-				// * -- Add new field to all collections -- * //
-
-				// customField: z.string().optional(),
-
-				// * -- Override the default author for all collections -- * //
-
-				// author: z.string().optional(),
-
-				// * -- Override the default title for a single collection or multiple collections -- * //
-
-				// title: z
-				// 	.string()
-				// 	.default(collectionName === "blog" ? BLOG.title : DOCS.title)
-				// 	.optional(),
+				cover: z.object({
+					src: image(),
+					alt: z.string().optional(),
+				}).optional(),
 			}),
 	});
-console.log("🚀 ~ collectionSchemas:", './src/data/'+collectionName.toLowerCase() )
+	console.log("🚀 ~ collectionSchemas:", './src/data/' + collectionName.toLowerCase())
+	// * -- Example overrides -- * //
+
+	// * -- Add new field to all collections -- * //
+
+	// customField: z.string().optional(),
+
+	// * -- Override the default author for all collections -- * //
+
+	// author: z.string().optional(),
+
+	// * -- Override the default title for a single collection or multiple collections -- * //
+
+	// title: z
+	// 	.string()
+	// 	.default(collectionName === "blog" ? BLOG.title : DOCS.title)
+	// 	.optional(),
 });
 
 

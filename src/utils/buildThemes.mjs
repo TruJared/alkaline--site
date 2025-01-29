@@ -7,7 +7,32 @@ const inputFile = path.resolve('src/styles/themes.css');
 const outputTypeFile = path.resolve('./src/types/types.ts');
 const outputNamesFile = path.resolve('./src/utils/themeNames.js');
 
+/**
+ * Theme Builder Script
+ *
+ * Automatically generates TypeScript types and JavaScript constants from CSS theme definitions.
+ *
+ * Input: src/styles/themes.css
+ * Outputs:
+ * - src/types/types.ts: TypeScript union type of theme names
+ * - src/utils/themeNames.js: JavaScript array of theme names
+ *
+ * Usage:
+ * - Extracts theme names from CSS classes starting with '.theme-'
+ * - Special handling for :root theme (defaults to 'theme-light')
+ * - Auto-updates existing type definitions without affecting other content
+ * - Creates directories if they don't exist
+ *
+ * Error Handling:
+ * - Validates CSS parsing
+ * - Ensures file read/write operations
+ * - Provides colored console output for status and errors
+ */
 
+/**
+ * Extracts theme names from the CSS file
+ * @returns {Promise<string[]>} Array of theme names
+ */
 async function extractThemeNames() {
   try {
     const cssContent = await readFile(inputFile, 'utf-8');
@@ -38,6 +63,10 @@ async function extractThemeNames() {
   }
 }
 
+/**
+ * Generates TypeScript types and JavaScript constants files
+ * @param {string[]} themeNames - Array of extracted theme names
+ */
 async function generateFiles(themeNames) {
   const typeContent = `// This type is auto-generated. Do not edit manually.
 export type ThemeNames = ${themeNames.map(name => `'${name}'`).join(' | ')};
@@ -79,6 +108,11 @@ export const themeNames = [${themeNames.map(name => `'${name}'`).join(', ')}];
   }
 }
 
+/**
+ * Main execution function
+ * Coordinates the theme extraction and file generation process
+ * Provides console feedback for build progress
+ */
 async function main() {
   console.log(chalk.blue('Starting theme names extraction...'));
   const themeNames = await extractThemeNames();

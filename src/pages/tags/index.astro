@@ -3,7 +3,7 @@ import { COLLECTION_NAMES_LIST } from "src/alkaline.config";
 import { getCollection } from "astro:content";
 import Layout from "@layouts/Layout.astro";
 import TagCloud from "@components/Astro/TagCloud.astro";
-import PageHeading from "@components/Astro/PageHeading.astro";
+import Heading from "@components/Astro/Heading.astro";
 // Get all entries from all collections
 const allEntries = await Promise.all(
 	COLLECTION_NAMES_LIST.map((collection) => getCollection(collection))
@@ -31,7 +31,7 @@ const sortedTags = Object.entries(tagCounts)
 ---
 
 <Layout title="Tags">
-	<PageHeading text="Get Entries by Tag" />
+	<Heading text="Get Entries by Tag" />
 	<section>
 		<TagCloud tags={sortedTags} />
 	</section>
