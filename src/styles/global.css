@@ -11,6 +11,8 @@
 	html {
 		@apply antialiased;
 		@apply min-h-[100svh] w-full flex flex-col items-center bg-theme-primary text-theme-primary bg-gradient-linear font-sans my-0 mx-auto;
+		@apply scroll-smooth;
+
 	}
 
 	body {
@@ -262,10 +264,10 @@
 
 @layer components {
 	.is-title {
-		@apply text-5xl font-bold font-serif bg-gradient-radial text-transparent bg-clip-text md:text-6xl lg:tracking-widest lg:leading-normal;
+		@apply text-4xl font-bold font-serif bg-gradient-radial text-transparent bg-clip-text md:text-6xl lg:tracking-widest lg:leading-normal;
 	}
 	.is-title-alt {
-		@apply text-5xl font-bold font-serif bg-theme-secondary text-theme-secondary md:text-6xl lg:tracking-widest lg:leading-normal;
+		@apply text-4xl font-bold font-serif bg-theme-secondary text-theme-secondary md:text-6xl lg:tracking-widest lg:leading-normal;
 	}
 	.focused {
 		@apply outline-2 outline-offset-1 focus-visible:no-underline focus-visible:outline-dashed;
