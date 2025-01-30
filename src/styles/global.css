@@ -20,11 +20,36 @@
 	}
 
 	section {
-		@apply py-3 px-6 m-3 mx-1 md:p-4 md:m-4;
+		/* Major page sections */
+		margin-block: 4rem;      /* 64px - significant section breaks */
+		margin-inline: auto;     /* Center sections horizontally */
+		width: 100%;            /* Full width by default */
+		max-width: var(--content-width, 1200px); /* Constrain width */
 	}
 
 	article {
-		@apply p-1 m-1 md:p-2 md:m-2;
+		/* Content containers */
+		margin-block: 2rem;     /* 32px - clear content separation */
+		padding: 1.5rem;        /* 24px - consistent internal spacing */
+	}
+
+	div {
+		/* Flexible containers */
+		margin-block: 1rem;     /* 16px - moderate spacing */
+		padding: 0.5rem;        /* 8px - minimal internal padding */
+	}
+
+	p {
+		/* Text blocks */
+		margin-block: 1rem;     /* 16px - standard paragraph spacing */
+		line-height: 1.6;       /* Improved readability */
+	}
+
+	span {
+		/* Inline elements */
+		margin: 0;              /* No disruption to text flow */
+		padding: 0;
+		display: inline;        /* Ensure inline behavior */
 	}
 
 	/** Typography **/
@@ -264,10 +289,10 @@
 
 @layer components {
 	.is-title {
-		@apply text-4xl font-bold font-serif bg-gradient-radial text-transparent bg-clip-text md:text-6xl lg:tracking-widest lg:leading-normal;
+		@apply text-5xl font-bold font-serif bg-gradient-radial text-transparent bg-clip-text md:text-6xl lg:tracking-widest lg:leading-normal;
 	}
 	.is-title-alt {
-		@apply text-4xl font-bold font-serif bg-theme-secondary text-theme-secondary md:text-6xl lg:tracking-widest lg:leading-normal;
+		@apply text-5xl font-bold font-serif bg-theme-secondary text-theme-secondary md:text-6xl lg:tracking-widest lg:leading-normal;
 	}
 	.focused {
 		@apply outline-2 outline-offset-1 focus-visible:no-underline focus-visible:outline-dashed;
@@ -276,3 +301,8 @@
 		@apply pointer-events-none opacity-50 no-underline;
 	}
 }
+
+/* Utility classes for spacing adjustments */
+.no-margin { margin: 0; }
+.no-padding { padding: 0; }
+.stack > * + * { margin-block-start: 1rem; } /* Stack items with consistent spacing */

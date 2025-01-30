@@ -47,7 +47,7 @@ const options = {
 
 <div
 	class:list={[
-		"flex border-b-8 border-t-8",
+		"flex border-b-8 border-t-8 my-0 py-0",
 		{
 			"border-none": !showTitleBackground,
 			"border-theme-secondary": showTitleBackground,
@@ -56,13 +56,13 @@ const options = {
 		// "rounded-t-none",
 	]}
 >
-	<div class="flex flex-row items-center justify-center w-full">
+	<div class="flex flex-row items-center justify-center w-full my-0">
 		<h1
 			class:list={[
-				"py-2 w-full p-10 m-2",
+				"w-full py-0 mx-0",
 				{
 					"is-title-alt leading-none py-5 text-center": showTitleBackground,
-					"is-title p-0 pl-2": !showTitleBackground,
+					"is-title p-0": !showTitleBackground,
 				},
 				className,
 			]}
@@ -72,7 +72,7 @@ const options = {
 			{
 				logoImg && (
 					<span class="flex items-center justify-center w-full">
-						<span class="rounded-full border-2 border-theme-primary mr-6 overflow-hidden min-w-[64px]">
+						<span class="rounded-full border-2 border-theme-primary mr-6 overflow-hidden hidden md:block">
 							<Image src={logoImg} alt="Logo" width={64} height={64} class="w-full" />
 						</span>
 						{title}
