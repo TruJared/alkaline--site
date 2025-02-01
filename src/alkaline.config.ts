@@ -62,9 +62,9 @@ export const SITE: Site = {
 	disableIndexing: false, // true for no indexing
 	socials: socials,
 	locale: "en_US",
-	postsPerPage: 5, // TODO: change this to a non-testing number //
+	postsPerPage: 5,
 	shikiConfig: {
-		theme: "tokyo-night",
+		theme: "github-dark",
 	},
 	// * edit or remove ./Types/google-fonts.d.ts to add/remove font types * //
 	fonts: [

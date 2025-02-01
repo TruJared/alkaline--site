@@ -15,7 +15,7 @@
 	}
 
 	body {
-		@apply min-h-[100svh] w-full max-w-[1650px];
+		@apply min-h-[100svh] w-full max-w-7xl;
 	}
 
 	section {
@@ -230,7 +230,7 @@
 	}
 
 	.prose p {
-		@apply text-theme-primary text-lg font-extralight py-5 ml-2;
+		@apply text-theme-primary text-lg font-extralight p-2 lg:p-2.5;
 	}
 
 	.prose a {
