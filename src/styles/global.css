@@ -15,7 +15,7 @@
 	}
 
 	body {
-		@apply min-h-[100svh] w-full max-w-7xl;
+		@apply min-h-[100svh] w-full max-w-[1680px];
 	}
 
 	section {
@@ -201,7 +201,7 @@
 
 	.prose h1,
 	.prose .h1 {
-		@apply text-4xl text-theme-secondary leading-relaxed md:text-5xl tracking-widest;
+		@apply text-4xl text-theme-secondary leading-relaxed md:text-5xl tracking-widest max-w-7xl;
 	}
 
 	.prose h2,
