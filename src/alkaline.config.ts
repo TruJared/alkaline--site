@@ -56,6 +56,7 @@ export const SITE: Site = {
 	showTitleBackground: true,
 	faviconSrc: "/favicon.png", // in public directory
 	url: "https://alkaline-theme.xyz",
+	ogImage: "/og-image.png", // in public directory
 	author: AUTHORS[0].name, // Made with ❤️ by {your-name}
 	description: "A Neutral Base For Your Next Creation",
 	keywords: ["astro", "theme", "blog"],

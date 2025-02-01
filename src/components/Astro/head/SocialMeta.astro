@@ -43,7 +43,7 @@ interface Props {
 	title?: string;
 	description?: string;
 	type?: "website" | "article" | "profile" | "book" | "product";
-	image?: string;
+	ogImage?: string;
 	canonicalURL?: string;
 	platform?: string;
 	locale?: string;
@@ -61,7 +61,7 @@ const {
 	title,
 	description,
 	type = "website",
-	image,
+	ogImage,
 	canonicalURL = Astro.url.href,
 	platform,
 	locale = "en_US",
@@ -75,8 +75,10 @@ const {
 	twitterCardType = "summary_large_image",
 } = Astro.props;
 
+// TODO: review the images on this page... Seems not correct.
+
 // Ensure image is a full URL
-const imageUrl = new URL(image ?? "", Astro.site);
+const imageUrl = new URL(ogImage ?? "", Astro.site);
 
 // JSON-LD Data
 let jsonLdData;
@@ -165,7 +167,10 @@ Object.entries(jsonLdData).forEach(([key, value]) => {
 		<meta property="article:modified_time" content={modifiedTime} />
 	)
 }
-{keywords && keywords.map((tag) => <meta property="article:tag" content={tag} />)}
+{
+	keywords &&
+		keywords.map((tag) => <meta property="article:tag" content={tag} />)
+}
 {section && <meta property="article:section" content={section} />}
 
 <!-- Twitter -->
@@ -176,4 +181,8 @@ Object.entries(jsonLdData).forEach(([key, value]) => {
 <meta name="twitter:image:alt" content={title} />
 
 <!-- JSON-LD -->
-<script is:inline type="application/ld+json" set:html={JSON.stringify(jsonLdData)} />
+<script
+	is:inline
+	type="application/ld+json"
+	set:html={JSON.stringify(jsonLdData)}
+/>
