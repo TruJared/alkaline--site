@@ -61,7 +61,7 @@ const {
 <Layout title="Elements">
 	<!-- <span class="elements-page"> -->
 	<Heading text="Components" />
-	<p class="text-center mx-auto text-xl xl:text-2xl leading-relaxed px-2">
+	<p class="text-center mx-auto text-2xl px-2 max-w-5xl leading-loose">
 		Alkaline features more than <Neon titleText="24 custom components " />,
 		along with a concise design and typography system.
 	</p>
@@ -71,7 +71,7 @@ const {
 				<Icon name="ri:star-fill" width="1.75rem" class="inline -mt-2" />
 				Title
 			</h2>
-			<p class="mb-8 ml-2">
+			<p class="mb-8 ml-2 text-xl text-xl">
 				Several configurations are available for the Title component.
 			</p>
 
@@ -100,7 +100,7 @@ const {
 					class="inline -mt-2 mr-2"
 				/>Page Header
 			</h2>
-			<p class="mb-8 ml-2">
+			<p class="mb-8 ml-2 text-xl">
 				Multiple configuration options make it easy to create a variety of
 				headers.
 			</p>
@@ -125,7 +125,7 @@ const {
 				<Icon name="ri:star-fill" width="1.75rem" class="inline -mt-2" />
 				Cards
 			</h2>
-			<p class="mb-8 ml-2">
+			<p class="mb-8 ml-2 text-xl">
 				There are several configurations available for the card component. These
 				configuration options should make it easy to build a variety of cards.
 			</p>
@@ -173,7 +173,7 @@ const {
 				<Icon name="ri:star-fill" width="1.75rem" class="inline -mt-2" />
 				Author with socials
 			</h2>
-			<p class="mb-8 ml-2">
+			<p class="mb-8 ml-2 text-xl">
 				A variety of social icons are available for the author component. Easily
 				switch to your favorite icon library.
 			</p>
@@ -188,7 +188,7 @@ const {
 				<Icon name="ri:star-fill" width="1.75rem" class="inline -mt-2" />
 				Tooltip
 			</h2>
-			<p>Available in two different styles.</p>
+			<p class="mb-8 ml-2 text-xl">Available in two different styles.</p>
 
 			<div class="ml-8 p-4">
 				<!-- Basic usage -->
@@ -211,9 +211,9 @@ const {
 				<Icon name="ri:star-fill" width="1.75rem" class="inline -mt-2" />
 				404
 			</h2>
-			<p>A basic 404 page is included.</p>
+			<p class="mb-8 ml-2 text-xl">A basic 404 page is included.</p>
 
-			<div class="ml-8 p-4">
+			<div class="ml-8 p-4 text-lg">
 				<p>
 					Not all who wonder are lost, but if they are, they'll get a nice <Link
 						href="/404"
@@ -228,9 +228,7 @@ const {
 
 	<Heading text="Typography" />
 
-	<p
-		class="text-center mx-auto text-xl xl:text-2xl leading-relaxed px-2 max-w-4xl"
-	>
+	<p class="text-center mx-auto text-2xl px-2 max-w-5xl leading-loose">
 		Alkaline comes with built-in typography, layouts, and essential styling
 		powered by Tailwind CSS. You can easily customize or remove any styling to
 		match your needs.
@@ -264,7 +262,7 @@ const {
 				<Icon name="ri:star-fill" width="1.75rem" class="inline -mt-2" />
 				Lists
 			</h2>
-			<div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl">
+			<div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl">
 				<span>
 					<h3 class="mb-2">Unordered List</h3>
 					<ul class="list-disc pl-5">
@@ -291,7 +289,7 @@ const {
 				Blockquotes
 			</h2>
 
-			<blockquote class="border-l-4 border-gray-300 pl-4 italic max-w-4xl">
+			<blockquote class="border-l-4 border-gray-300 pl-4 italic max-w-5xl">
 				<p>
 					Conan O'Brien consectetur adipiscing elit. Sed ut urna nec purus
 					lacinia tincidunt nec Andy Richter. Vivamus efficitur, risus at
@@ -308,8 +306,7 @@ const {
 			</h2>
 			<p class="mb-4">
 				Inline code: <Code code=" const x = 42; " lang="js" inline />
-				<p class="mt-8 mb-2">Code block:</p>
-				<Code lang="astro" code={code} />
+			</p>
 				<p class="mt-8 mb-2">Code block with copy to clipboard:</p>
 				<CodeCopy lang="astro" code={code} />
 			</p>
@@ -329,9 +326,3 @@ const {
 	</section>
 	<!-- </span> -->
 </Layout>
-
-<style>
-	p {
-		@apply text-xl;
-	}
-</style>

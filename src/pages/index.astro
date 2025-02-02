@@ -53,7 +53,7 @@ const options = {
 		animate={true}
 	/>
 	<section
-		class="mx-0 w-full flex flex-row flex-wrap-reverse justify-center gap-4 mt-12 mb-16 lg:justify-between lg:flex-nowrap lg:p-5 build-in"
+		class="mx-0 w-full flex flex-row flex-wrap-reverse justify-center gap-4 mt-14 mb-16 lg:mt-0 lg:justify-between lg:flex-nowrap lg:p-5 build-in"
 	>
 		<Card
 			title="Configure"
@@ -139,21 +139,20 @@ const options = {
 		</p>
 
 		<Link
-			href="https://github.com/jaredmakes/alkaline"
+			href="https://github.comTruJared/alkaline--site"
 			class="btn btn-primary mt-6"
 			text="View on GitHub"
 		/>
 	</section>
 
 	<section class="flex flex-col items-center justify-center mb-32 mt-12">
-		<div style="aspect-ratio:750/500; width:750px;">
+		<div class="w-full mb-8 flex justify-center">
 			<Image
 				src={Bing}
 				alt="a quote from Chandler Bing from Friends. Hard work never killed anybody, but why take a chance?"
 				class:list={["shadow-md shadow-theme-primary", options]}
 				loading="lazy"
 				width={750}
-				height={500}
 				format="webp"
 			/>
 		</div>
@@ -183,9 +182,8 @@ const options = {
 </Layout>
 
 <style>
-	.build-in { /* renamed from .build-in */
+	.build-in {
+		/* renamed from .build-in */
 		animation-delay: 0.75s;
 	}
 </style>
-
-<script></script>

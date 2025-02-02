@@ -51,13 +51,13 @@ interface Props {
 const { page, class: className } = Astro.props;
 if (!page) return;
 const { currentPage, lastPage, url } = page;
-const { next = "#", prev = "#" } = url;
+const { next, prev } = url;
 ---
 
 <nav class:list={["flex justify-start items-center", className]}>
 	<Link
 		href={prev}
-		text=" ← Previous"
+		text="← Previous"
 		class:list={["text-theme-primary p-2", { disabled: !prev }]}
 	/>
 		<span class="px-2">
@@ -66,7 +66,7 @@ const { next = "#", prev = "#" } = url;
 
 		<Link
 			href={next}
-			text=" ← Next"
+			text="Next →"
 			class:list={["text-theme-primary p-2", { disabled: !next }]}
 		/>
 

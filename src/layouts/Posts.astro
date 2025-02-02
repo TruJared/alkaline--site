@@ -63,12 +63,12 @@ const options = { "rounded-theme": true };
 						)}
 						<h2 class="">{post.data.title}</h2>
 					</a>
-					<div class="flex flex-wrap mt-1 -mb-2">
+					<div class="flex flex-wrap mt-0 mb-3">
 						{post.data.tags?.map((tag: string) => (
 							<Tag tag={tag} size="sm" />
 						))}
 					</div>
-					<p>
+					<p class="text-lg mb-2">
 						{post.data.description}{" "}
 						<a
 							href={`/${post.collection || collectionName}/${post.id}`}
@@ -82,13 +82,13 @@ const options = { "rounded-theme": true };
 							updated: {post.data.modDatetime?.toDateString()}
 						</p>
 					)}
-					<div class="border-l-8 border-theme-primary pb-4 pl-6 mb-4 mt-0.5 ml-1 inline-block">
+					<div class="border-l-4 border-theme-primary p-4 mb-3 mt-0.5 ml-1 inline-block">
 						<Icon
 							name="ri:quill-pen-line"
 							size="16"
-							class="align-middle inline mr-2"
+							class="align-middle inline mr-0.5"
 						/>
-						Posted by:{" "}
+						Posted by:
 						<Author
 							authorId={post.data.authorId || ""}
 							pubDateTime={post.data.pubDatetime}

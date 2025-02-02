@@ -38,15 +38,15 @@ const { authorId, pubDateTime = null, class: className } = Astro.props;
 <div class:list={["text-theme-primary font-mono mt-0 ml-0 p-0", className]}>
 	<span>
 		{AUTHORS.find((author) => author.id === authorId)?.name}
-		<div class="text-sm font-normal -mt-1 -mb-1">
-			{pubDateTime ? `${pubDateTime.toDateString()}  ` : ""}
+		<div class="text-sm font-normal mt-0.5 -mb-2">
+			{pubDateTime ? `On ${pubDateTime.toDateString()}  ` : ""}
 		</div>
 	</span>
 	<div class="m-0">
 		<SocialsCloud
 			socials={AUTHORS.find((author) => author.id === authorId)?.socials || []}
 			size={18}
-			class:list={["ml-0 p-0 -mt-0.5", className]}
+			class:list={["ml-0 mt-3"]}
 		/>
 	</div>
 </div>
