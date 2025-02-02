@@ -17,6 +17,10 @@ Alkaline is an Astro-based theme that provides:
 - 🎯 TypeScript & Tailwind included
 - 🍒 Statically generated with Astro, with a focus on developer experience and clean design
 
-⚠️Thanks for checking out the Alkaline demo. I'm still making some minor changes and finishing up the docs. All the components curretnly have JSDocs and TypeScript types. It should be easy to pick up and use if you are familiar with Astro and Tailwind. I hope to have the whole project wrapped up and ready for public consumption around 2025-01-24.
+⚠️Thanks for checking out the Alkaline demo. I'm still making some minor changes and finishing up the docs. All the components curretnly have JSDocs and TypeScript types. It should be easy to pick up and use if you are familiar with Astro and Tailwind. I hope to have the whole project wrapped up and ready for public consumption around 2025-02-10.
 
 you can find the source code [here](https://github.com/truared/Alkaline).
+
+## Todo
+
+- [ ] Docker support

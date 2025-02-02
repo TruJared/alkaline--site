@@ -71,7 +71,9 @@ const {
 				<Icon name="ri:star-fill" width="1.75rem" class="inline -mt-2" />
 				Title
 			</h2>
-			<p>Various configurations are available for the title component.</p>
+			<p class="mb-8 ml-2">
+				Several configurations are available for the Title component.
+			</p>
 
 			<Title title="Gradient Title" showTitleBackground={false} />
 			<div class="h-8 border-t-8 border-theme-secondary mb-4"></div>
@@ -82,7 +84,12 @@ const {
 			/>
 			<div class="h-8"></div>
 
-			<Title title="Logo Shown" showTitleBackground logoImg={logoImg} />
+			<Title
+				title="Logo Shown"
+				showTitleBackground
+				forceLogoOnMobile
+				logoImg={logoImg}
+			/>
 		</article>
 
 		<article class="mt-24">
@@ -93,18 +100,19 @@ const {
 					class="inline -mt-2 mr-2"
 				/>Page Header
 			</h2>
-			<p class="mb-12">
-				There are several configurations available for the page header. These
-				configuration options should make it easy to build a variety of headers.
+			<p class="mb-8 ml-2">
+				Multiple configuration options make it easy to create a variety of
+				headers.
 			</p>
 			<PageHeader
 				heading="Page Header"
 				description="Lorem ipsum dolor sit amet, Mauris fringilla, nunc at tincidunt fermentum, turpis nunc Max Weinberg, et facilisis leo magna eget nunc. Integer Sona Movsesian, lorem a facilisis fermentum, justo orci."
+				class="max-w-5xl"
 			/>
 			<hr />
 			<PageHeader
 				heading="Page Header"
-				description="Refresh to view animation: Lorem ipsum dolor sit amet, Conan O'Brien consectetur adipiscing elit. Sed ut urna nec purus lacinia tincidunt nec Andy Richter. Vivamus efficitur."
+				description="Refresh to view the animation: Lorem ipsum dolor sit amet, Conan O'Brien consectetur adipiscing elit. Sed ut urna nec purus lacinia tincidunt, nec Andy Richter. Vivamus efficitur."
 				image={logoImg}
 				imageAlt="ALK Logo"
 				backgroundPattern="M20.3 29.35l-3.1-3.2-3.55 3.55-3.55-3.55 3.55-3.55 3.55 3.55L31.35 12 27.8 8.45l-3.55 3.55 3.55 3.55L30.9 18.65l-3.35 3.6L20.75 15.55l3.55-3.55L17.2 4.95 20.7 1.3l3.55 3.6L20.75 8.45 17.2 12l-7.45-7.45L13.35.9l3.85 4.05-3.55 3.55-3.55 3.55 3.55 3.55-3.55 3.55-3.55-3.55-3.9-3.9 3.55-3.55L13.65 15.55l-3.55-3.55L3.05 19.1l3.55 3.55L13.65 15.55l-3.55 3.55 3.55 3.55 3.55-3.55L23.75 25.8l.05.05-3.5 3.5"
@@ -117,12 +125,12 @@ const {
 				<Icon name="ri:star-fill" width="1.75rem" class="inline -mt-2" />
 				Cards
 			</h2>
-			<p>
+			<p class="mb-8 ml-2">
 				There are several configurations available for the card component. These
 				configuration options should make it easy to build a variety of cards.
 			</p>
 			<div
-				class="flex flex-row flex-wrap justify-center items-center md:justify-evenly gap-6"
+				class="flex flex-row flex-wrap justify-center items-center md:justify-evenly gap-6 mt-24"
 			>
 				<Card
 					title="Card"
@@ -165,12 +173,14 @@ const {
 				<Icon name="ri:star-fill" width="1.75rem" class="inline -mt-2" />
 				Author with socials
 			</h2>
-			<p class="pb-6">
+			<p class="mb-8 ml-2">
 				A variety of social icons are available for the author component. Easily
 				switch to your favorite icon library.
 			</p>
 
-			<Author authorId={2} pubDateTime={null} class="ml-1" />
+			<div class="ml-8 p-4">
+				<Author authorId={2} pubDateTime={null} class="ml-1" />
+			</div>
 		</article>
 
 		<article class="mt-24">
@@ -180,17 +190,19 @@ const {
 			</h2>
 			<p>Available in two different styles.</p>
 
-			<!-- Basic usage -->
-			<div>
-				<Tooltip triggerText="Hover me" tooltipText="I'm a tooltip!" />
-			</div>
+			<div class="ml-8 p-4">
+				<!-- Basic usage -->
+				<div>
+					<Tooltip triggerText="Hover me" tooltipText="I'm a tooltip!" />
+				</div>
 
-			<!-- With slots -->
-			<div>
-				<Tooltip neonify>
-					<span slot="trigger">Hover me</span>
-					<div slot="content">I'm a tooltip too!</div>
-				</Tooltip>
+				<!-- With slots -->
+				<div>
+					<Tooltip neonify>
+						<span slot="trigger">Hover me</span>
+						<div slot="content">I'm a tooltip too!</div>
+					</Tooltip>
+				</div>
 			</div>
 		</article>
 
@@ -201,12 +213,14 @@ const {
 			</h2>
 			<p>A basic 404 page is included.</p>
 
-			<p>
-				Not all who wonder are lost, but if they are, they'll get a nice <Link
-					href="/404"
-					text="404"
-				/> message.
-			</p>
+			<div class="ml-8 p-4">
+				<p>
+					Not all who wonder are lost, but if they are, they'll get a nice <Link
+						href="/404"
+						text="404"
+					/> message.
+				</p>
+			</div>
 		</article>
 	</section>
 
@@ -214,7 +228,9 @@ const {
 
 	<Heading text="Typography" />
 
-	<p class="text-center mx-auto text-xl xl:text-2xl leading-relaxed px-2">
+	<p
+		class="text-center mx-auto text-xl xl:text-2xl leading-relaxed px-2 max-w-4xl"
+	>
 		Alkaline comes with built-in typography, layouts, and essential styling
 		powered by Tailwind CSS. You can easily customize or remove any styling to
 		match your needs.
@@ -227,14 +243,14 @@ const {
 				Paragraphs
 			</h2>
 
-			<p>
+			<p class="max-w-4xl">
 				Lorem ipsum dolor sit amet, Conan O'Brien consectetur adipiscing elit.
 				Sed ut urna nec purus lacinia tincidunt nec Andy Richter. Vivamus
 				efficitur, risus at vehicula fermentum, eros magna Matt O'Brien, non
 				tincidunt lacus magna at eros. Nulla facilisi. In hac habitasse platea
 				dictumst."
 			</p>
-			<p>
+			<p class="max-w-4xl">
 				Lorem ipsum dolor sit amet, Conan O'Brien consectetur adipiscing elit.
 				Sed ut urna nec purus lacinia tincidunt nec Andy Richter. Vivamus
 				efficitur, risus at vehicula fermentum, eros magna Matt O'Brien, non
@@ -248,7 +264,7 @@ const {
 				<Icon name="ri:star-fill" width="1.75rem" class="inline -mt-2" />
 				Lists
 			</h2>
-			<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+			<div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl">
 				<span>
 					<h3 class="mb-2">Unordered List</h3>
 					<ul class="list-disc pl-5">
@@ -257,14 +273,15 @@ const {
 						<li>Item 3</li>
 					</ul>
 				</span>
-				<div>
+
+				<span>
 					<h3 class="mb-2">Ordered List</h3>
 					<ol class="list-decimal pl-5">
 						<li>Item 1</li>
 						<li>Item 2</li>
 						<li>Item 3</li>
 					</ol>
-				</div>
+				</span>
 			</div>
 		</article>
 
@@ -274,7 +291,7 @@ const {
 				Blockquotes
 			</h2>
 
-			<blockquote class="border-l-4 border-gray-300 pl-4 italic">
+			<blockquote class="border-l-4 border-gray-300 pl-4 italic max-w-4xl">
 				<p>
 					Conan O'Brien consectetur adipiscing elit. Sed ut urna nec purus
 					lacinia tincidunt nec Andy Richter. Vivamus efficitur, risus at
@@ -312,3 +329,9 @@ const {
 	</section>
 	<!-- </span> -->
 </Layout>
+
+<style>
+	p {
+		@apply text-xl;
+	}
+</style>

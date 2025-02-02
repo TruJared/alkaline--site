@@ -33,6 +33,6 @@ export async function GET(context) {
 		description: DOCS.description || SITE.description,
 		site: context.site,
 		items: items,
-		customData: `<language>${SITE.language || "en-us"}</language>`,
+		customData: `<language>${SITE.locale || "en-us"}</language>`,
 	});
 }

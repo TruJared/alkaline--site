@@ -39,7 +39,7 @@ const { authorId, pubDateTime = null, class: className } = Astro.props;
 	<span>
 		{AUTHORS.find((author) => author.id === authorId)?.name}
 		<div class="text-sm font-normal -mt-1 -mb-1">
-			{pubDateTime ? ` - ${pubDateTime.toDateString()}  ` : ""}
+			{pubDateTime ? `${pubDateTime.toDateString()}  ` : ""}
 		</div>
 	</span>
 	<div class="m-0">

@@ -27,12 +27,12 @@
 	}
 
 	div {
-		@apply my-4 p-1;
+		@apply my-2 p-1;
 		/* Flexible containers */
 	}
 
 	p {
-		@apply my-4 p-0.5;
+		@apply my-2 p-0.5;
 	}
 
 	span {
@@ -108,6 +108,11 @@
 	a {
 		@apply underline underline-offset-2 decoration-2 decoration-theme-primary hover:decoration-theme-secondary hover:text-theme-accent hover:bg-opacity-20 cursor-pointer focus:ring-2 focus:ring-theme-primary focus:ring-offset-2 focus:outline-none;
 	}
+
+		a.active {
+		@apply text-theme-accent no-underline;
+
+		}
 
 	/* tweak line height */
 	p,

@@ -53,11 +53,11 @@ const options = {
 		animate={true}
 	/>
 	<section
-		class="mx-0 w-full flex flex-row flex-wrap-reverse justify-center gap-4 mt-8 mb-16 lg:justify-between lg:flex-nowrap lg:p-5  build-in"
+		class="mx-0 w-full flex flex-row flex-wrap-reverse justify-center gap-4 mt-12 mb-16 lg:justify-between lg:flex-nowrap lg:p-5 built-in"
 	>
 		<Card
 			title="Configure"
-			description="Single config file, TypeScript support, and pre-built components for rapid development."
+			description="Unlock endless possibilities with our intuitive configuration system. Effortlessly customize every aspect of your theme to create a unique and personalized web experience."
 			shadowSize="lg"
 			name="ri:settings-3-line"
 		/>
@@ -97,33 +97,30 @@ const options = {
 
 	<section
 		id="Features"
-		class="mx-0 w-full flex flex-row flex-wrap-reverse justify-center gap-4 mt-8 mb-16 lg:justify-between lg:flex-nowrap lg:p-5 build-in"
+		class="mx-0 w-full flex flex-row flex-wrap-reverse justify-center gap-4 mt-8 mb-16 lg:justify-between lg:flex-nowrap lg:p-5 built-in"
 	>
 		<Card
 			title="Fast"
 			description="Experience blazing speed with Alkaline, optimized for performance and capable of achieving perfect scores on Lighthouse."
 			shadowSize="lg"
 			name="ri:rocket-2-line"
-
 		/>
 		<Card
 			title="Flexible"
 			description="Leverage Astro's capabilities to build without needing a JavaScript framework. Optionally, add one or multiple frameworks if desired."
 			shadowSize="lg"
 			name="ri:code-s-slash-line"
-
 		/>
 		<Card
 			title="Free"
 			description="What's mine is yours - Alkaline is open-source and MIT licensed."
 			shadowSize="lg"
 			name="ri:open-source-line"
-
 		/>
 	</section>
 
 	<section
-		class="flex flex-col items-center justify-center mb-48  mt-16 fade-in"
+		class="flex flex-col items-center justify-center mb-48 mt-16 fade-in"
 	>
 		<h2
 			class:list={[
@@ -149,15 +146,17 @@ const options = {
 	</section>
 
 	<section class="flex flex-col items-center justify-center mb-32 mt-12">
-		<Image
-			src={Bing}
-			alt="a quote from Chandler Bing from Friends. Hard work never killed anybody, but why take a chance?"
-			class:list={["shadow-md shadow-theme-primary", options]}
-			loading="lazy"
-			width={750}
-			height={500}
-			format="webp"
-		/>
+		<div style="aspect-ratio:750/500; width:750px;">
+			<Image
+				src={Bing}
+				alt="a quote from Chandler Bing from Friends. Hard work never killed anybody, but why take a chance?"
+				class:list={["shadow-md shadow-theme-primary", options]}
+				loading="lazy"
+				width={750}
+				height={500}
+				format="webp"
+			/>
+		</div>
 
 		<h2
 			class:list={[
@@ -184,7 +183,7 @@ const options = {
 </Layout>
 
 <style>
-	.build-in {
+	.built-in { /* renamed from .build-in */
 		animation-delay: 0.75s;
 	}
 </style>
